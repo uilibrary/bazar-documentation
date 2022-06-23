@@ -1,0 +1,13 @@
+:root {
+  --clr-primary: #d23f57;
+  --clr-text: #2b3445;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--clr-text);
+}
+
+.text-primary {
+  color: var(--clr-primary);
+}

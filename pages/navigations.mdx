@@ -1,0 +1,180 @@
+<h1 className="text-primary">Navigations</h1>
+
+There exist 2 different navigations.
+
+1. Navbar Navigation
+2. Admin/Vendor Dashboard Navigation
+
+<h4>1. Navbar Navigation</h4>
+
+- Edit **Navbar Navigation** style or design from `src/components/navbar/Navbar`
+- Edit Navbar list data from `src/data/navbarNavigations`
+- Inside `src/components/navbar` there are have also 3 different **Mega Menu**
+  - Mega Menu 1 - `src/components/navbar/MegaMenu`
+  - Mega Menu 2 - `src/components/navbar/MegaMenu2`
+  - Mobile Menu - `src/components/navbar/MobileMenu` for small device
+
+**Navbar Navigation Data Structure**
+
+```ts
+const navbarNavigations = [
+  {
+    title: 'Home',
+    megaMenu: false,
+    megaMenuWithSub: false,
+    child: [
+      { title: 'Super Store', url: '/superstore-shop' },
+      { title: 'Furniture', url: '/furniture-shop' },
+      { title: 'Grocery-v1', url: '/grocery1' },
+      { title: 'Grocery-v2', url: '/grocery2' },
+      { title: 'Grocery-v3', url: '/grocery3' },
+      { title: 'Health and Beauty', url: '/healthbeauty-shop' },
+      { title: 'Fashion', url: '/fashion-shop' },
+      { title: 'Gift Store', url: '/gift-shop' },
+      { title: 'Gadget', url: '/gadget-shop' },
+    ],
+  },
+
+  {
+    megaMenu: true,
+    megaMenuWithSub: false,
+    title: 'All Demos',
+    child: megaMenus,
+  },
+  {
+    megaMenu: false,
+    megaMenuWithSub: true,
+    title: 'Categories',
+    child: categoriesMegaMenu,
+  },
+
+  { megaMenu: false, megaMenuWithSub: false, title: 'Back to Demos', url: '/' },
+]
+```
+
+**Mega Menu 1 Data Structure**
+
+```ts
+const megaMenus = [
+  [
+    {
+      title: 'Home',
+      child: [
+        { title: 'Super Store', url: '/superstore-shop' },
+        { title: 'Furniture', url: '/furniture-shop' },
+        { title: 'Grocery-v1', url: '/grocery1' },
+      ],
+    },
+  ],
+
+  [
+    {
+      title: 'User Account',
+      child: [
+        { title: 'Order List', url: '/orders' },
+        { title: 'Order Details', url: '/orders/5452423' },
+        { title: 'View Profile', url: '/profile' },
+      ],
+    },
+  ],
+]
+```
+
+**Mega Menu 2 Data Structure**
+
+```ts
+const categoriesMegaMenu = [
+  {
+    title: 'Fashion',
+    child: [
+      {
+        title: "Men's Fashion",
+        child: [
+          { title: 'T-Shirt', url: '#', Icon: Icons.Shirt },
+          { title: 'Formal Shirt', url: '#', Icon: Icons.UserTie },
+        ],
+      },
+      {
+        title: "Women's Fashion",
+        child: [
+          { title: 'Clothing', url: '#' },
+          { title: 'Shoes', url: '#' },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Electronics',
+    child: [
+      {
+        title: 'Accessories & Supplies',
+        child: [
+          { title: 'Audio & Video Accessories', url: '#' },
+          { title: 'Cables', url: '#' },
+        ],
+      },
+      {
+        title: 'Power Accessories',
+        child: [
+          { title: 'AC Adapters', url: '#' },
+          { title: 'Isolation Transformers', url: '#' },
+        ],
+      },
+      {
+        title: 'Video Game Consoles & Accessories',
+        child: [
+          { title: 'PlayStation 4', url: '#' },
+          { title: 'PlayStation 3', url: '#' },
+        ],
+      },
+    ],
+  },
+]
+```
+
+<h4>2. Admin/Vendor Dashboard Navigation</h4>
+
+- Edit Navbar list data from `src/components/layouts/vendor-dashboard/NavigationList`
+
+**Dashboard Navs Data Structure**
+
+```ts
+export const navigations = [
+  { type: 'label', label: 'Admin' },
+  {
+    name: 'Dashboard',
+    icon: duotone.Dashboard,
+    path: '/vendor/dashboard',
+  },
+
+  {
+    name: 'Products',
+    icon: duotone.Products,
+    children: [
+      { name: 'Product List', path: '/admin/products' },
+      { name: 'Create Product', path: '/admin/products/create' },
+      { name: 'Category', path: '/admin/categories' },
+      { name: 'Brand', path: '/admin/brands' },
+      { name: 'Review', path: '/admin/product-reviews' },
+    ],
+  },
+
+  { type: 'label', label: 'Vendor' },
+  {
+    name: 'Earnings',
+    icon: duotone.ProjectChart,
+    children: [
+      { name: 'Earning History', path: '/vendor/earning-history' },
+      { name: 'Payouts', path: '/vendor/payouts' },
+      { name: 'Payout Request', path: '/vendor/payout-requests' },
+      { name: 'Payout Settings', path: '/vendor/payout-settings' },
+    ],
+  },
+
+  {
+    name: 'Refund Request',
+    icon: duotone.Refund,
+    path: '/vendor/refund-request',
+  },
+]
+```

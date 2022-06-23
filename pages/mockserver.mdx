@@ -1,0 +1,60 @@
+# Api and Mock Server
+
+Axios is used for call dummy api, you can use any library you want. Fetch is another viable option.
+
+### Note
+
+- `src/fake-db/mock`(Axios instance) is intercepted by the MockAdapter.
+- Any requests made with it will be rejected by the adapter.
+
+### How to access mock server
+
+- Get mock server inside `src/fake-db` folder.
+- Get all dummy api function inside `src/utils/api` folder.
+- We created pages based on file names. So you can easily understand
+
+**\_app.tsx**
+
+```ts
+import '../src/fake-db'
+```
+
+### Fake API Design
+
+```ts
+// src/fake-db/server/dashboard
+
+Mock.onGet('/api/products').reply(() => {
+  try {
+    return [200, products]
+  } catch (err) {
+    console.error(err)
+    return [500, { message: 'Internal server error' }]
+  }
+})
+```
+
+### API Function
+
+```ts
+// src/utils/api/
+
+const recentPurchase = async () => {
+  const response = await axios.get('/api/recent-purchase')
+  return response.data
+}
+```
+
+### API Function Call from Client Side
+
+```ts
+import api from 'utils/api/grocery1-shop'
+
+export async function getStaticProps() {
+  const popularProducts = await api.getPopularProducts()
+
+  return {
+    props: { popularProducts },
+  }
+}
+```
