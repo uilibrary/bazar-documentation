@@ -1,5 +1,10 @@
 <h1 className="text-primary">Bazar Theme Setup</h1>
 
+- theme/MuiTheme.tsx is the main theme file.
+- theme/themeColors.ts Contains theme colors (Primary, Secondary & etc.)
+- theme/components.js Overrides the MUI default component styles
+- theme/typography.ts Sets fontFamily and fontSize
+
 Theme folder structure should look like this:
 
 ```ts
@@ -62,8 +67,12 @@ export const themeColors = {
 ```
 
 <h4>3. Theme Options</h4>
-We added multiple theme options based on the different homepages. In your project
-just keep the default theme option then remove other theme options
+
+> We have multiple color theme for different shops. E.G. Default, Grocery, Health & etc. themeOptions.ts file returns one color theme based on currently displayed demo on browser(by detecting url path)
+
+Of course you don't need this. You can delete themeOptions.ts file and rename themeOptionsSample.ts to themeOptions.ts
+
+Now themeOptions.ts file will always return one color theme.
 
 ```ts
 const themesOptions: ThemeOptions = {

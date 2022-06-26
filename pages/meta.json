@@ -4,6 +4,6 @@
   "theme": "Theme Setup",
   "layouts": "Layouts",
   "navigations": "Navigation",
-  "content": "Change Page Content",
+  "components": "Components",
   "mockserver": "Api and Mock Server"
 }

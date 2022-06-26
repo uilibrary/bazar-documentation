@@ -1,7 +1,6 @@
 export default {
-  github: 'https://github.com/uilibrary/uko-react-documentation',
-  docsRepositoryBase:
-    'https://github.com/uilibrary/uko-react-documentation.git',
+  github: 'https://github.com/uilibrary/bazar-documentation',
+  docsRepositoryBase: 'https://github.com/uilibrary/bazar-documentation',
   titleSuffix: ' – Bazar React Ecommerce Template',
   logo: (
     <>
@@ -51,9 +50,9 @@ export default {
     </>
   ),
   search: true,
+  footer: false,
   prevLinks: true,
   nextLinks: true,
-  footer: false,
   footerEditLink: 'Edit this page on GitHub',
   footerText: <p>MIT {new Date().getFullYear()} © UILib</p>,
 }
