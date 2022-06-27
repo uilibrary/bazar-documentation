@@ -5,7 +5,7 @@
 - theme/components.js Overrides the MUI default component styles
 - theme/typography.ts Sets fontFamily and fontSize
 
-Theme folder structure should look like this:
+### Theme folder structure:
 
 ```ts
 src/
@@ -68,11 +68,11 @@ export const themeColors = {
 
 <h4>3. Theme Options</h4>
 
-> We have multiple color theme for different shops. E.G. Default, Grocery, Health & etc. themeOptions.ts file returns one color theme based on currently displayed demo on browser(by detecting url path)
+> We have multiple color theme for different shops. E.G. Default, Grocery, Health & etc. `themeOptions.ts` file returns one color theme based on currently displayed demo on browser(by detecting url path)
 
-Of course you don't need this. You can delete themeOptions.ts file and rename themeOptionsSample.ts to themeOptions.ts
+Of course you don't need this. You can delete `themeOptions.ts` file and rename `themeOptionsSample.ts` to `themeOptions.ts`
 
-Now themeOptions.ts file will always return one color theme.
+Now `themeOptions.ts` file will always return one color theme.
 
 ```ts
 const themesOptions: ThemeOptions = {
