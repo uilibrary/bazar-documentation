@@ -1,9 +1,10 @@
 {
   "index": "Quick Start",
   "folder-structure": "Folder Structure",
-  "theme": "Theme Setup",
   "layouts": "Layouts",
-  "navigations": "Navigation",
   "components": "Components",
+  "theme": "Theme",
+  "navigations": "Navigation",
+  "settings": "Settings",
   "mockserver": "Api and Mock Server"
 }
