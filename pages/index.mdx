@@ -6,23 +6,34 @@
 
 <h3>1. Requirements</h3>
 
-Make sure that you have the last stable [NodeJS](https://nodejs.org/en/download/) and `yarn` version.
+Make sure that you have the last stable [NodeJS](https://nodejs.org/en/download/) and `npm` version.
 
-- Do not delete the `yarn.lock` file
+- Do not delete the `package-lock.json / yarn.lock file`
 
 <h3>2. Install</h3>
 
 Navigate to the project root folder using terminal and install the dependencies.
+**Install with npm**
+
+```js
+npm install --legacy-peer-deps
+```
 
 **Install with yarn**
 
 ```js
-yarn
+yarn install
 ```
 
 <h3>3. Run development server</h3>
 
 After the installation is complete, you can launch your app by running.
+
+```js
+npm run dev
+```
+
+or
 
 ```js
 yarn dev
@@ -37,6 +48,12 @@ ready - started server on 0.0.0.0:3000, url: http://localhost:3000
 ```
 
 <h3>4. Build</h3>
+
+```js
+npm run build
+```
+
+or
 
 ```js
 yarn build
