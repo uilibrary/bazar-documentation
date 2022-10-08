@@ -1,6 +1,13 @@
-# Api and Mock Server
+# Data fetching and Mock Server
 
-Axios is used for calling api, you can use any library you want. Fetch is another viable option.
+## REST API
+
+Each demo page gets its data by using `getStaticProps` function;
+
+For example market-1.tsx fetching data in its
+`getStaticProps` function. This function uses REST api to get data. HTTP calls are made in `utils/api/market-1.ts` file.
+
+`axios` is used for calling the api, you can use any library you want.
 
 ### API Function
 
@@ -31,9 +38,10 @@ export async function getStaticProps() {
 ### Note
 
 - We use mock server for demo purpose. You need to remove this from the template.
-- You can remove this by removing the import from **pages/\_app.tsx**
+- Remove the import from **pages/\_app.tsx**
 ```ts
 // _app.tsx
+// Remove this import
 import '../src/fake-db'
 ```
 

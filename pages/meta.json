@@ -2,9 +2,10 @@
   "index": "Quick Start",
   "folder-structure": "Folder Structure",
   "layouts": "Layouts",
-  "components": "Components",
   "theme": "Theme",
   "navigations": "Navigation",
   "settings": "Settings",
-  "mockserver": "Api and Mock Server"
+  "icons": "Icons",
+  "mockserver": "Data fetching",
+  "data-structure": "Data Structure"
 }
