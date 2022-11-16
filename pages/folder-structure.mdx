@@ -2,7 +2,6 @@
 
 > **/pages/\_app.tsx** is the main entry file. Next.js follows file system based routing. Each file in `pages` folder is a route.
 
-
 ```ts
 bazar-react/
 ├── public/
@@ -19,8 +18,14 @@ bazar-react/
     ├── support
     ├── 50+ Other pages
 ├── src/
+|   ├── __server__/
+|   |   ├── __api__
+|   |   |   ├── all api functions create inside
+|   |   ├── __db__
+|   |   |   ├── all dummy data inside
 |   ├── animations
 |   ├── components/
+|   |   ├── icons
 |   |   ├── layouts
 |   |   |   ├── customer-dashboard
 |   |   |   ├── vendor-dashboard
@@ -28,12 +33,13 @@ bazar-react/
 |   |   └── Includes reusable atomic components
 |   ├── contexts
 |   ├── data
-|   ├── fake-db
 |   ├── hooks
+|   ├── models
 |   ├── page-sections
 |   |   └── Includes bigger components (these components contain hard coded data)
 |   ├── theme
 |   ├── utils
+|   ├── lib
 └── README.md
 ```
 

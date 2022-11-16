@@ -1,0 +1,108 @@
+# Gift Shop - Data Structure
+
+**End point:** `/api/gift-shop/main-carousel`  
+**Used in:** Gift Shop, Section1
+
+**Output:**
+
+```ts
+[
+    {
+        id: 1,
+        buttonLink: "#",
+        buttonText: "Shop Now",
+        subTitle: "GIFT SHOP",
+        imgUrl: "/assets/images/Gift Shop/Header.png",
+        title: "The gift of a man is his goodwill. Take care of gift",
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/gift-shop-navigation`  
+**Used in:** Gift Shop, SideNavbar
+
+**Output:**
+
+```ts
+[
+    {
+        category: "Top Categories",
+        categoryItem: [
+            {
+                icon: "Home",
+                title: "Home",
+                href: "/product/search/Dariry & Eggs"
+            },
+            ...
+        ],
+    },
+    {
+        category: "Top Categories",
+        categoryItem: [
+        {
+            icon: "BirthdayCake",
+            title: "Birthday",
+            href: "/product/search/vegetables",
+            child: [
+                {
+                    title: "Pears, apples, quinces",
+                    href: "/product/search/Pears, apples, quinces"
+                },
+                ...
+            ],
+        },
+        {
+            icon: "Flower",
+            title: "Flower",
+            href: "/product/search/Dariry & Eggs"
+        },
+        ...
+        ],
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/gift-shop/service-list`  
+**Used in:** Gift Shop, Section2
+
+**Output:**
+
+```ts
+[
+    {
+        id: "742fb40b-c820-4caa-a23d-3bbc0216e1f7",
+        icon: "Truck",
+        title: "Delivery quality gift",
+        description: "information on its origins",
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/gift-shop/top-categories`  
+**Used in:** Gift Shop, Section4
+
+**Output:**
+
+```ts
+[
+    {
+        id: "4c9681ac-69e7-4ab6-b819-971b8ee9563b",
+        name: "Birthday Gift",
+        icon: null,
+        image: "/assets/images/Gift Shop/Product 1.png",
+        slug: "birthday-gift",
+        parent: [],
+        description: "27 Available Items",
+    },
+    ...
+]
+```

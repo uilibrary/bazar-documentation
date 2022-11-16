@@ -1,0 +1,211 @@
+# Market 2 - Data Structure
+
+**End point:** `/api/market-2/main-carousel`  
+**Used in:** Market-2, Section1
+
+**Output:**
+
+```ts
+[
+    {
+        id: 1,
+        title: "Lifestyle collection",
+        category: "Men",
+        discount: 30,
+        imgUrl: "/assets/images/banners/banner-15.jpg",
+        description: "Get Free Shipping on orders over $99.00",
+        buttonText: "Shop Now",
+        buttonLink: "#",
+    }
+    ...
+]
+```
+
+---
+
+**End point:** `/api/market-2/service`  
+**Used in:** Market-2, Section2
+
+**Output:**
+
+```ts
+[
+    {
+        id: "ee272e30-0309-4e8a-966c-f63410c58289",
+        icon: "Truck",
+        title: "Fast Delivery",
+        description: "Start from $10",
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/market-2/category`  
+**Used in:** Market-2, Section3
+
+**Output:**
+
+```ts
+[
+    {
+        id: "51cc79e6-c0d8-40e6-b9a5-a3a0c5931242",
+        name: "Toys",
+        icon: null,
+        image: "/assets/images/categories/cat-1.jpg",
+        slug: "toys",
+        parent: [],
+        description: null,
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/market-2/products`  
+**Used in:** Market-2, Section4
+
+**Output:**
+
+```ts
+[
+    {
+        id: "8ac53dd8-6418-454f-bbb5-29f0b26ac5a5",
+        slug: "nikecourt-zoom-vapor-cage",
+        shop: {
+            id: "baa3a02b-42da-40c0-852b-3aa292b70704",
+            slug: "anytime-buys",
+            user: {
+                id: "e0d8be78-c530-4f1a-a2df-d082ba2db274",
+                email: "Daisy.McLaughlin80@yahoo.com",
+                phone: "1-462-772-4274 x931",
+                avatar: "...",
+                password: "nAGr0Rkf8CLP4Sv",
+                dateOfBirth: "1958-06-07T17:14:57.585Z",
+                verified: true,
+                name: { firstName: "Llewellyn", lastName: "Schmitt" },
+            },
+            email: "Vida.Simonis@hotmail.com",
+            name: "Anytime Buys",
+            phone: "(613) 343-9004",
+            address: "845 N. Stonybrook Ave. Tonawanda, NY 14210, Denmark",
+            verified: false,
+            coverPicture: "/assets/images/banners/banner-6.png",
+            profilePicture: "/assets/images/faces/propic(5).png",
+            socialLinks: {
+                facebook: null,
+                youtube: null,
+                twitter: null,
+                instagram: null,
+            },
+        },
+        title: "NikeCourt Zoom Vapor Cage",
+        brand: null,
+        price: 250,
+        size: null,
+        colors: [],
+        discount: 25,
+        thumbnail: "flash-1.png",
+        images: ["flash-1.png", "flash-1.png"],
+        categories: [],
+        status: null,
+        reviews: [],
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/market-2/category-based-product`  
+**Used in:** Market-2, Section5
+
+**Output:**
+
+```ts
+[
+    {
+        category: {
+            title: "Electronic",
+            children: [
+                "Wireless Speaker",
+                "Tablet",
+                "Smartphone",
+                "Laptop",
+                "iMac",
+                "Game Controller",
+                "Drone",
+                "Apple",
+            ],
+        },
+        products: [
+            {
+                id: "8ac53dd8-6418-454f-bbb5-29f0b26ac5a5",
+                slug: "nikecourt-zoom-vapor-cage",
+                shop: {
+                    id: "baa3a02b-42da-40c0-852b-3aa292b70704",
+                    slug: "anytime-buys",
+                    user: {
+                        id: "e0d8be78-c530-4f1a-a2df-d082ba2db274",
+                        email: "Daisy.McLaughlin80@yahoo.com",
+                        phone: "1-462-772-4274 x931",
+                        avatar: "...",
+                        password: "nAGr0Rkf8CLP4Sv",
+                        dateOfBirth: "1958-06-07T17:14:57.585Z",
+                        verified: true,
+                        name: { firstName: "Llewellyn", lastName: "Schmitt" },
+                    },
+                    email: "Vida.Simonis@hotmail.com",
+                    name: "Anytime Buys",
+                    phone: "(613) 343-9004",
+                    address: "845 N. Stonybrook Ave. Tonawanda, NY 14210, Denmark",
+                    verified: false,
+                    coverPicture: "/assets/images/banners/banner-6.png",
+                    profilePicture: "/assets/images/faces/propic(5).png",
+                    socialLinks: {
+                        facebook: null,
+                        youtube: null,
+                        twitter: null,
+                        instagram: null,
+                    },
+                },
+                title: "NikeCourt Zoom Vapor Cage",
+                brand: null,
+                price: 250,
+                size: null,
+                colors: [],
+                discount: 25,
+                thumbnail: "flash-1.png",
+                images: ["flash-1.png", "flash-1.png"],
+                categories: [],
+                status: null,
+                reviews: [],
+            },
+            ...
+        ]
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/market-2/brand`  
+**Used in:** Market-2, Section8
+
+**Output:**
+
+```ts
+[
+    {
+    id: "9aee1898-23e0-4965-8f0d-427dc963ae07",
+    slug: "alibaba",
+    name: "AliBaba",
+    image: "/assets/images/brands/alibaba.png",
+    type: "fashion",
+  },
+    ...
+]
+```
