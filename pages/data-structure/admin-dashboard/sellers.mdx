@@ -1,0 +1,105 @@
+# Sellers - Data Structure
+
+**End point:** `/api/admin/sellers`  
+**Used in:** Admin Dashboard - Seller List Page
+
+**Output:**
+
+```ts
+[
+    {
+        phone: "+12345678910",
+        balance: 10_350.25,
+        name: "Ethan Booth",
+        shopName: "The Beauty",
+        package: "Premium",
+        published: true,
+        image: "/assets/images/avatars/001-man.svg",
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/admin/package-payments`  
+**Used in:** Admin Dashboard - Package Payments Page
+
+**Output:**
+
+```ts
+[
+    {
+        no: 1,
+        date: "20-04-2022",
+        seller: "Ethan Booth",
+        package: "Premium",
+        amount: 200,
+        payment: "Stripe",
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/admin/earning-history`  
+**Used in:** Admin Dashboard - Earning History Page
+
+**Output:**
+
+```ts
+[
+    {
+        no: 1,
+        date: "20-04-2022",
+        sellerEarning: 200,
+        adminCommission: 5.15,
+        orderNo: "5256SD6465D32",
+        shopName: "The Beauty Shop",
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/admin/payouts`  
+**Used in:** Admin Dashboard - Payouts Page
+
+**Output:**
+
+```ts
+[
+    {
+        no: 1,
+        amount: 1_200,
+        date: "20-04-2022",
+        payment: "Cash",
+        sellerInfo: "The Beauty Shop",
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/admin/payout-requests`  
+**Used in:** Admin Dashboard - Payout Requests Page
+
+**Output:**
+
+```ts
+[
+    {
+        no: 1,
+        date: "20-04-2022",
+        status: "Accepted",
+        seller: "Ethan Booth",
+        totalAmount: 1_200,
+        requestAmount: 200,
+        shopName: "The Beauty Shop",
+    },
+    ...
+]
+```

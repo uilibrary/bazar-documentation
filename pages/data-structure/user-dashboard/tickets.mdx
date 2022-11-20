@@ -1,0 +1,96 @@
+# Support Tickets - Data Structure
+
+**End point:** `/api/tickets`  
+**Used in:** User Dashboard - Support Tickets Page
+
+**Output:**
+
+```ts
+[
+    {
+        id: "40279d09-b80f-42e2-b271-7febbcab5bf0",
+        user: {
+            id: "c2d9ff45-f2bf-4219-a522-34a6916c6b29",
+            email: "Wilton_Bins88@gmail.com",
+            phone: "1-880-641-1129 x059",
+            avatar: "...",
+            password: "2YgKrLvT_yf33iw",
+            dateOfBirth: "1945-01-22T05:32:32.096Z",
+            verified: true,
+            name: { firstName: "Angel", lastName: "Mayert" },
+        },
+        slug: "product-broken.-i-need-refund",
+        type: "Urgent",
+        date: "13 April, 2022",
+        title: "Product Broken. I need refund",
+        status: "Open",
+        category: "Website Problem",
+        conversation: [
+            {
+                imgUrl: "...",
+                name: "Esther Howard",
+                date: "2020-12-14T08:39:58.219Z",
+                text: "...",
+            },
+            ...
+        ],
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/tickets/slugs`  
+**Used in:** User Dashboard - Support Tickets Details Page
+
+**Output:**
+
+```ts
+[
+    {
+        params: {
+            slug: "d6182878-c107-43f4-9f96-6898a573cd0c"
+        }
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/tickets/single`  
+**Used in:** User Dashboard - Support Tickets Details Page
+
+**Output:**
+
+```ts
+{
+    id: "40279d09-b80f-42e2-b271-7febbcab5bf0",
+    user: {
+        id: "c2d9ff45-f2bf-4219-a522-34a6916c6b29",
+        email: "Wilton_Bins88@gmail.com",
+        phone: "1-880-641-1129 x059",
+        avatar: "...",
+        password: "2YgKrLvT_yf33iw",
+        dateOfBirth: "1945-01-22T05:32:32.096Z",
+        verified: true,
+        name: { firstName: "Angel", lastName: "Mayert" },
+    },
+    slug: "product-broken.-i-need-refund",
+    type: "Urgent",
+    date: "13 April, 2022",
+    title: "Product Broken. I need refund",
+    status: "Open",
+    category: "Website Problem",
+    conversation: [
+        {
+            imgUrl: "...",
+            name: "Esther Howard",
+            date: "2020-12-14T08:39:58.219Z",
+            text: "...",
+        },
+        ...
+    ],
+}
+```

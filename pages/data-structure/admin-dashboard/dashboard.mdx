@@ -1,0 +1,57 @@
+# Dashboard - Data Structure
+
+**End point:** `/api/admin/dashboard-cards`  
+**Used in:** Admin Dashboard - Dashboard Page
+
+**Output:**
+
+```ts
+[
+    {
+        id: 1,
+        title: "Order",
+        amount1: "32,350",
+        amount2: 9350,
+        color: "info.main",
+        percentage: "25.25%",
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/admin/recent-purchase`  
+**Used in:** Admin Dashboard - Dashboard Page (Recent Purchase Table)
+
+**Output:**
+
+```ts
+[
+    {
+        id: "#6d3wedo5",
+        amount: 152.25,
+        payment: "Success",
+        product: "Aavic Headphone",
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/admin/stock-out-products`  
+**Used in:** Admin Dashboard - Dashboard Page (Stock Out Product Table)
+
+**Output:**
+
+```ts
+[
+    {
+        amount: 152.25,
+        stock: "00",
+        product: "Samsung Glaxy-M1"
+    },
+    ...
+]
+```

@@ -1,0 +1,76 @@
+# Address - Data Structure
+
+**End point:** `/api/address/user`  
+**Used in:** User Dashboard - Address Page
+
+**Output:**
+
+```ts
+[
+    {
+        id: "d27d0e28-c35e-4085-af1e-f9f1b1bd9c34",
+        user: {
+            id: "16c6edfe-3c30-47c0-ac12-118638865b0b",
+            email: "Lonie52@gmail.com",
+            phone: "980-937-8940",
+            avatar: "...",
+            password: "s55mt2Iqv5VGdFm",
+            dateOfBirth: "1999-08-26T15:45:39.852Z",
+            verified: true,
+            name: { firstName: "Eleanora", lastName: "Donnelly" },
+        },
+        city: "New Zoietown",
+        phone: "(213) 840-9416",
+        street: "497 Erdman Passage",
+        country: "Paraguay",
+        title: "Office",
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/address/address-ids`  
+**Used in:** User Dashboard - Address Details Page
+
+**Output:**
+
+```ts
+[
+    {
+        params: {
+            id: "d6182878-c107-43f4-9f96-6898a573cd0c"
+        }
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/address/user/1`  
+**Used in:** User Dashboard - Address Details Page
+
+**Output:**
+
+```ts
+{
+    id: "d27d0e28-c35e-4085-af1e-f9f1b1bd9c34",
+    user: {
+        id: "16c6edfe-3c30-47c0-ac12-118638865b0b",
+        email: "Lonie52@gmail.com",
+        phone: "980-937-8940",
+        avatar: "...",
+        password: "s55mt2Iqv5VGdFm",
+        dateOfBirth: "1999-08-26T15:45:39.852Z",
+        verified: true,
+        name: { firstName: "Eleanora", lastName: "Donnelly" },
+    },
+    city: "New Zoietown",
+    phone: "(213) 840-9416",
+    street: "497 Erdman Passage",
+    country: "Paraguay",
+    title: "Office",
+},
+```

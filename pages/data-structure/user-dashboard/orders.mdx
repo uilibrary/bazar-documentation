@@ -1,0 +1,100 @@
+# Order - Data Structure
+
+**End point:** `/api/users/orders`  
+**Used in:** User Dashboard - Order Page
+
+**Output:**
+
+```ts
+[
+    {
+        users: {
+            id: "d6182878-c107-43f4-9f96-6898a573cd0c",
+            email: "Micah.Hirthe@gmail.com",
+            phone: "214.932.2455",
+            avatar: "...",
+            password: "IIBBM119nM0nW35",
+            dateOfBirth: "1951-08-19T22:27:56.791Z",
+            verified: true,
+            name: { firstName: "Benny", lastName: "Bergnaum" },
+        },
+        id: "f0ba538b-c8f3-45ce-b6c1-209cf07ba5f8",
+        tax: 0,
+        items: [
+            {
+                product_img: "...",
+                product_name: "Budi 2017",
+                product_price: 226,
+                product_quantity: 4,
+            },
+            ...
+        ],
+        createdAt: "2022-11-10T10:35:02.079Z",
+        discount: 0,
+        totalPrice: 350,
+        isDelivered: false,
+        shippingAddress: "...",
+        status: "Pending",
+        deliveredAt: null,
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/users/order-ids`  
+**Used in:** User Dashboard - Order Details Page
+
+**Output:**
+
+```ts
+[
+    {
+        params: {
+            id: "d6182878-c107-43f4-9f96-6898a573cd0c"
+        }
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/users/order`  
+**Used in:** User Dashboard - Order Details Page
+
+**Output:**
+
+```ts
+{
+    users: {
+        id: "d6182878-c107-43f4-9f96-6898a573cd0c",
+        email: "Micah.Hirthe@gmail.com",
+        phone: "214.932.2455",
+        avatar: "...",
+        password: "IIBBM119nM0nW35",
+        dateOfBirth: "1951-08-19T22:27:56.791Z",
+        verified: true,
+        name: { firstName: "Benny", lastName: "Bergnaum" },
+    },
+    id: "f0ba538b-c8f3-45ce-b6c1-209cf07ba5f8",
+    tax: 0,
+    items: [
+        {
+            product_img: "...",
+            product_name: "Budi 2017",
+            product_price: 226,
+            product_quantity: 4,
+        },
+        ...
+    ],
+    createdAt: "2022-11-10T10:35:02.079Z",
+    discount: 0,
+    totalPrice: 350,
+    isDelivered: false,
+    shippingAddress: "...",
+    status: "Pending",
+    deliveredAt: null,
+}
+```

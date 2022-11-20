@@ -1,0 +1,121 @@
+# Vendor/Shop - Data Structure
+
+**End point:** `/api/shops`  
+**Used in:** Shop Page
+
+**Output:**
+
+```ts
+[
+    {
+        id: "e3700a58-9697-4eeb-92e3-ba6fc16992ed",
+        slug: "scarlett-beauty",
+        user: {
+            id: "2f035122-413b-47b8-b857-b7abc706c461",
+            email: "Sandrine_Okuneva@yahoo.com",
+            phone: "975.919.6321 x31038",
+            avatar: "...",
+            password: "oQAXKdNNwdAz3Ri",
+            dateOfBirth: "1984-06-11T04:09:55.108Z",
+            verified: true,
+            name: { firstName: "Hope", lastName: "Ullrich" },
+        },
+        email: "Marlin71@gmail.com",
+        name: "Scarlett Beauty",
+        phone: "(613) 343-9004",
+        address: "845 N. Stonybrook Ave. Tonawanda, NY 14210, Denmark",
+        verified: false,
+        coverPicture: "/assets/images/banners/cycle.png",
+        profilePicture: "/assets/images/faces/propic.png",
+        socialLinks: {
+            facebook: null,
+            youtube: null,
+            twitter: null,
+            instagram: null,
+        },
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/shops/single`  
+**Used in:** Shop Details Page
+
+**Output:**
+
+```ts
+{
+    id: "e3700a58-9697-4eeb-92e3-ba6fc16992ed",
+    slug: "scarlett-beauty",
+    user: {
+        id: "2f035122-413b-47b8-b857-b7abc706c461",
+        email: "Sandrine_Okuneva@yahoo.com",
+        phone: "975.919.6321 x31038",
+        avatar: "...",
+        password: "oQAXKdNNwdAz3Ri",
+        dateOfBirth: "1984-06-11T04:09:55.108Z",
+        verified: true,
+        name: { firstName: "Hope", lastName: "Ullrich" },
+    },
+    email: "Marlin71@gmail.com",
+    name: "Scarlett Beauty",
+    phone: "(613) 343-9004",
+    address: "845 N. Stonybrook Ave. Tonawanda, NY 14210, Denmark",
+    verified: false,
+    coverPicture: "/assets/images/banners/cycle.png",
+    profilePicture: "/assets/images/faces/propic.png",
+    socialLinks: {
+        facebook: null,
+        youtube: null,
+        twitter: null,
+        instagram: null,
+    },
+    products: [
+        {
+            id: "8ac53dd8-6418-454f-bbb5-29f0b26ac5a5",
+            slug: "nikecourt-zoom-vapor-cage",
+            shop: {
+                id: "baa3a02b-42da-40c0-852b-3aa292b70704",
+                slug: "anytime-buys",
+                user: {
+                    id: "e0d8be78-c530-4f1a-a2df-d082ba2db274",
+                    email: "Daisy.McLaughlin80@yahoo.com",
+                    phone: "1-462-772-4274 x931",
+                    avatar: "...",
+                    password: "nAGr0Rkf8CLP4Sv",
+                    dateOfBirth: "1958-06-07T17:14:57.585Z",
+                    verified: true,
+                    name: { firstName: "Llewellyn", lastName: "Schmitt" },
+                },
+                email: "Vida.Simonis@hotmail.com",
+                name: "Anytime Buys",
+                phone: "(613) 343-9004",
+                address: "845 N. Stonybrook Ave. Tonawanda, NY 14210, Denmark",
+                verified: false,
+                coverPicture: "/assets/images/banners/banner-6.png",
+                profilePicture: "/assets/images/faces/propic(5).png",
+                socialLinks: {
+                    facebook: null,
+                    youtube: null,
+                    twitter: null,
+                    instagram: null,
+                },
+            },
+            title: "NikeCourt Zoom Vapor Cage",
+            brand: null,
+            price: 250,
+            size: null,
+            colors: [],
+            discount: 25,
+            thumbnail: "flash-1.png",
+            images: ["flash-1.png", "flash-1.png"],
+            categories: [],
+            status: null,
+            reviews: [],
+        },
+        ...
+    ]
+},
+```

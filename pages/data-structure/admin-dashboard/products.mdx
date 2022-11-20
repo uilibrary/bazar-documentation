@@ -1,0 +1,149 @@
+# Products - Data Structure
+
+**End point:** `/api/admin/products`  
+**Used in:** Admin Dashboard - Product Page
+
+**Output:**
+
+```ts
+[
+    {
+        id: "eecbf3ce-7a23-4a09-a515-2cf2c50f4fdc",
+        slug: "samsung-galaxy-m1",
+        shop: {
+            id: "0a045861-99f1-41d5-afe5-af95f6a9b2c0",
+            slug: "keyboard-kiosk",
+            user: {
+                id: "c8f28042-ea46-4502-957d-c8f84b423009",
+                email: "Clare7@yahoo.com",
+                phone: "746-662-6200 x23927",
+                avatar: "...",
+                password: "ZRRtZ5y8Y_PKDwc",
+                dateOfBirth: "1952-08-29T19:34:20.601Z",
+                verified: true,
+                name: { firstName: "Raven", lastName: "Wisoky" },
+            },
+            email: "Clifton.Mohr@hotmail.com",
+            name: "Keyboard Kiosk",
+            phone: "(613) 343-9004",
+            address: "845 N. Stonybrook Ave. Tonawanda, NY 14210, Denmark",
+            verified: false,
+            coverPicture: "/assets/images/banners/banner-5.png",
+            profilePicture: "/assets/images/faces/propic(4).png",
+            socialLinks: {
+                facebook: null,
+                youtube: null,
+                twitter: null,
+                instagram: null,
+            },
+        },
+        title: "Samsung Galaxy-M1",
+        brand: "/assets/images/brands/samsung.png",
+        price: 250,
+        size: null,
+        colors: [],
+        discount: 0,
+        thumbnail: "/assets/images/products/samsung.png",
+        images: ["...", "..."],
+        categories: ["Gadgets"],
+        status: null,
+        reviews: [],
+        rating: 5,
+        unit: null,
+        published: true,
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/admin/category`  
+**Used in:** Admin Dashboard - Category Page
+
+**Output:**
+
+```ts
+[
+    {
+        id: "4c9681ac-69e7-4ab6-b819-971b8ee9563b",
+        name: "Birthday Gift",
+        icon: null,
+        image: "/assets/images/Gift Shop/Product 1.png",
+        slug: "birthday-gift",
+        parent: [],
+        description: "27 Available Items",
+        featured: true,
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/admin/brands`  
+**Used in:** Admin Dashboard - Brand Page
+
+**Output:**
+
+```ts
+[
+    {
+        id: "109a66f4-b1a3-45dc-b1e9-9f6912efa928",
+        slug: "samsung",
+        name: "Samsung",
+        image: "/assets/images/brands/samsung.png",
+        type: null,
+        featured: true,
+    },
+    ...
+]
+```
+
+---
+
+**End point:** `/api/admin/reviews`  
+**Used in:** Admin Dashboard - Product Review Page
+
+**Output:**
+
+```ts
+[
+    {
+        id: "d2e7dc64-578f-4732-97f8-d9893f167e53",
+        rating: 5,
+        published: true,
+        comment: "But I must explain to you how all this of denouncing pleasure.",
+        customer: {
+            id: "f4d769d6-a974-4d4f-aa29-6a3e8e2efcda",
+            email: "Iliana.Bergstrom@yahoo.com",
+            phone: "(803) 899-4000 x9513",
+            avatar: "...",
+            password: "pll1ltX_68sSGp9",
+            dateOfBirth: "1991-08-17T20:03:03.425Z",
+            verified: true,
+            name: { firstName: "Eladio", lastName: "Lehner" },
+        },
+        product: {
+            id: "dd63f47a-51a0-45f2-b9af-44190b87824f",
+            slug: "smart-watch-black",
+            shop: { ... },
+            title: "Smart watch black",
+            brand: null,
+            price: 250,
+            size: null,
+            colors: [],
+            discount: 25,
+            thumbnail: "/assets/images/products/chair-and-clothes.png",
+            images: [ "...", "..."],
+            categories: [],
+            status: null,
+            reviews: [],
+            rating: 4,
+            unit: null,
+        },
+
+    },
+    ...
+]
+```
