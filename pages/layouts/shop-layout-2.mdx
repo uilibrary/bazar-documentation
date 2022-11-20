@@ -1,0 +1,104 @@
+<h1 className="text-primary">Shop Layout 2</h1>
+
+Folder location: `src/components/layouts/ShopLayout2`
+
+<br />
+
+##### Name - `ShopLayout2`
+
+<br />
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <img src="/ShopLayout2.jpg" width="300" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+##### Example - `ShopLayout1` example code
+
+```jsx
+import ShopLayout2 from 'components/layouts/ShopLayout2'
+
+// example 1 - /healthbeauty-shop
+const Example1 = () => {
+  return <ShopLayout2>{children}</ShopLayout2>
+}
+
+// example 2 - /grocery2
+const Example2 = () => {
+  return <ShopLayout2 showTopbar={false}>{children}</ShopLayout2>
+}
+
+// example 3 - /grocery1
+const Example3 = () => {
+  return (
+    <ShopLayout2 showNavbar={false} showTopbar={false}>
+      {children}
+    </ShopLayout2>
+  )
+}
+```
+
+##### Inside Components - `ShopLayout2` used inside components
+
+- Topbar
+- Header
+- Navbar
+
+##### Used - `ShopLayout2` is used in following pages
+
+- [Grocery-1](https://bazar-react.vercel.app/grocery1)
+- [Grocery-2](https://bazar-react.vercel.app/grocery2)
+- [Health and Beauty](https://bazar-react.vercel.app/healthbeauty-shop)
+
+##### Props - `ShopLayout2` Prop List:
+
+<br />
+
+<table>
+
+<thead>
+  <tr>
+    <td>
+      <b>Name</b>
+    </td>
+    <td>
+      <b>Type</b>
+    </td>
+    <td>
+      <b>Required</b>
+    </td>
+    <td>
+      <b>Default</b>
+    </td>
+  </tr>
+</thead>
+
+  <tbody>
+    <tr>
+      <td>children</td>
+      <td>ReactNode</td>
+      <td>Yes</td>
+      <td>-</td>
+    </tr>
+
+    <tr>
+      <td>showTopbar</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td>true</td>
+    </tr>
+
+    <tr>
+      <td>showNavbar</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td>true</td>
+    </tr>
+
+  </tbody>
+</table>

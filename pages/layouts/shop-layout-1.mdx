@@ -1,0 +1,117 @@
+<h1 className="text-primary">Shop Layout 1</h1>
+
+Folder location: `src/components/layouts/ShopLayout1`
+
+##### Name - `ShopLayout1`
+
+<br />
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <img src="/ShopLayout1.jpg" width="300" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+##### Example - `ShopLayout1` example code
+
+```jsx
+import ShopLayout1 from 'components/layouts/ShopLayout1'
+
+// example 1 - /market-1
+const Example1 = () => {
+  return <ShopLayout1>{children}</ShopLayout1>
+}
+
+// example 2 - /fashion-shop-1
+const Example2 = () => {
+  return <ShopLayout1 showTopbar={false}>{children}</ShopLayout1>
+}
+
+// example 3 - /grocery3
+const Example3 = () => {
+  return <ShopLayout1 showNavbar={false}>{children}</ShopLayout1>
+}
+
+// example 4 - /market-2
+const Example4 = () => {
+  return <ShopLayout1 topbarBgColor="red">{children}</ShopLayout1>
+}
+```
+
+##### Inside Components - `ShopLayout1` used inside components
+
+- Topbar
+- Header
+- Navbar
+- MobileNavigationBar
+- Footer
+
+##### Used - `ShopLayout1` is used in following pages
+
+- [Market-1](https://bazar-react.vercel.app/market-1)
+- [Market-2](https://bazar-react.vercel.app/market-2)
+- [Grocery-3](https://bazar-react.vercel.app/grocery3)
+- [Gift Shop](https://bazar-react.vercel.app/gift-shop)
+- [Furniture Shop](https://bazar-react.vercel.app/furniture-shop)
+- [Fashion-1](https://bazar-react.vercel.app/fashion-shop)
+- [Fashion-2](https://bazar-react.vercel.app/fashion-shop-2)
+- [Fashion-3](https://bazar-react.vercel.app/fashion-shop-3)
+
+##### Props - `ShopLayout1` Prop List:
+
+<br />
+
+<table>
+
+<thead>
+  <tr>
+    <td>
+      <b>Name</b>
+    </td>
+    <td>
+      <b>Type</b>
+    </td>
+    <td>
+      <b>Required</b>
+    </td>
+    <td>
+      <b>Default</b>
+    </td>
+  </tr>
+</thead>
+
+  <tbody>
+    <tr>
+      <td>children</td>
+      <td>ReactNode</td>
+      <td>Yes</td>
+      <td>-</td>
+    </tr>
+
+    <tr>
+      <td>showTopbar</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td>true</td>
+    </tr>
+
+    <tr>
+      <td>showNavbar</td>
+      <td>boolean</td>
+      <td>Optional</td>
+      <td>true</td>
+    </tr>
+
+    <tr>
+      <td>topbarBgColor</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>-</td>
+    </tr>
+
+  </tbody>
+</table>
