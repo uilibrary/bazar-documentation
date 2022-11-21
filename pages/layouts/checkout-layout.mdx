@@ -1,15 +1,72 @@
-<h1 className="text-primary">Layouts</h1>
+<h1 className="text-primary">Checkout Nav Layout</h1>
 
-Folder location: `src/components/layouts`
+Folder location: `src/components/layouts/CheckoutNavLayout`
+
+##### Name - `CheckoutNavLayout`
 
 <br />
 
-###### 5. `ChcekoutNavLayout`
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <img src="/checkout-nav-layout.png" width="400" />
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-`ChcekoutNavLayout` is used in following pages
+##### Example - `CheckoutNavLayout` example code
 
-```ts
-1. Cart -> '/pages/cart'
-2. Checkout -> '/pages/checkout'
-3. Payment -> '/pages/payment'
+```jsx
+import CheckoutNavLayout from 'components/layouts/CheckoutNavLayout'
+
+const Example = () => {
+  return <CheckoutNavLayout>{children}</CheckoutNavLayout>
+}
 ```
+
+##### Inside Components - `CheckoutNavLayout` used inside components
+
+- [Stepper](https://bazaar-doc.netlify.app/layout-components/stepper)
+- [ShopLayout1](https://bazaar-doc.netlify.app/layouts/shop-layout-1)
+
+##### Used - `CheckoutNavLayout` is used in following pages
+
+- [Cart](https://bazar-react.vercel.app/cart)
+- [Payment](https://bazar-react.vercel.app/payment)
+- [Checkout](https://bazar-react.vercel.app/checkout)
+
+##### Props - `CheckoutNavLayout` Prop List:
+
+<br />
+
+<table>
+
+<thead>
+  <tr>
+    <td>
+      <b>Name</b>
+    </td>
+    <td>
+      <b>Type</b>
+    </td>
+    <td>
+      <b>Required</b>
+    </td>
+    <td>
+      <b>Default</b>
+    </td>
+  </tr>
+</thead>
+
+  <tbody>
+    <tr>
+      <td>children</td>
+      <td>ReactNode</td>
+      <td>Yes</td>
+      <td>-</td>
+    </tr>
+
+  </tbody>
+</table>

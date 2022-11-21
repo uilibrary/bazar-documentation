@@ -1,0 +1,85 @@
+<h1 className="text-primary">Navbar</h1>
+
+Folder location: `src/components/navbar/Navbar`
+
+##### Example - `Navbar` example code
+
+```jsx
+import Navbar from 'components/navbar/Navbar'
+
+// example 1 - SaleLayout
+const Example1 = () => {
+  return <Navbar />
+}
+
+// example 2 - ShopLayout1
+const Example2 = () => {
+  return <Navbar elevation={0} border={1} />
+}
+
+// example 3 - ShopLayout2
+const Example3 = () => {
+  return <Navbar elevation={0} />
+}
+```
+
+##### Used - `Navbar` is used in following layouts
+
+- [SaleLayout](https://bazaar-doc.netlify.app/layouts/sale-layout)
+- [ShopLayout1](https://bazaar-doc.netlify.app/layouts/shop-layout-1)
+- [ShopLayout2](https://bazaar-doc.netlify.app/layouts/shop-layout-2)
+
+##### Props - `Navbar` Prop List:
+
+<br />
+
+<table>
+
+<thead>
+  <tr>
+    <td>
+      <b>Name</b>
+    </td>
+    <td>
+      <b>Type</b>
+    </td>
+    <td>
+      <b>Required</b>
+    </td>
+    <td>
+      <b>Default</b>
+    </td>
+  </tr>
+</thead>
+
+  <tbody>
+    <tr>
+      <td>border</td>
+      <td>number</td>
+      <td>optional</td>
+      <td>-</td>
+    </tr>
+
+    <tr>
+      <td>elevation</td>
+      <td>number</td>
+      <td>optional</td>
+      <td>-</td>
+    </tr>
+
+    <tr>
+      <td>navListOpen</td>
+      <td>boolean</td>
+      <td>optional</td>
+      <td>-</td>
+    </tr>
+
+    <tr>
+      <td>hideCategories</td>
+      <td>boolean</td>
+      <td>optional</td>
+      <td>-</td>
+    </tr>
+
+  </tbody>
+</table>

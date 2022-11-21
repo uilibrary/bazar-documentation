@@ -1,0 +1,11 @@
+{
+  "topbar": "Topbar",
+  "header": "Header",
+  "navbar": "Navbar",
+  "footer": "Footer",
+  "stepper": "Stepper",
+  "navigations": "Navigations",
+  "mobile-navigation": "Mobile Navigation Bar",
+  "dashboard-navbar": "Admin Dashboard Navbar",
+  "dashboard-sidebar": "Admin Dashboard Sidebar"
+}

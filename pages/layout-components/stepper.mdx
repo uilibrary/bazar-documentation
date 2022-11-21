@@ -1,0 +1,71 @@
+<h1 className="text-primary">Stepper</h1>
+
+Folder location: `src/components/stepper/Stepper`
+
+##### Example - `Stepper` example code
+
+```jsx
+import Stepper from 'components/stepper/Stepper'
+
+const Example = () => {
+  return (
+    <Stepper
+      stepperList={stepperList}
+      selectedStep={selectedStep}
+      onChange={handleStepChange}
+    />
+  )
+}
+```
+
+##### Used - `Stepper` is used in following layouts
+
+- [CheckoutNavLayout](https://bazaar-doc.netlify.app/layouts/checkout-layout)
+
+##### Props - `Stepper` Prop List:
+
+<br />
+
+<table>
+
+<thead>
+  <tr>
+    <td>
+      <b>Name</b>
+    </td>
+    <td>
+      <b>Type</b>
+    </td>
+    <td>
+      <b>Required</b>
+    </td>
+    <td>
+      <b>Default</b>
+    </td>
+  </tr>
+</thead>
+
+  <tbody>
+    <tr>
+      <td>stepperList</td>
+      <td>array</td>
+      <td>true</td>
+      <td>-</td>
+    </tr>
+
+    <tr>
+      <td>selectedStep</td>
+      <td>number</td>
+      <td>true</td>
+      <td>1</td>
+    </tr>
+
+    <tr>
+      <td>onChange</td>
+      <td>function</td>
+      <td>true</td>
+      <td>-</td>
+    </tr>
+
+  </tbody>
+</table>

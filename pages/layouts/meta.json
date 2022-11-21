@@ -3,5 +3,6 @@
   "shop-layout-2": "Shop Layout 2",
   "customer-dashboard": "Customer Dashboard Layout",
   "vendor-dashboard": "Admin Dashboard Layout",
-  "checkout-layout": "Checkout Nav Layout"
+  "checkout-layout": "Checkout Nav Layout",
+  "sale-layout": "Sale Layout"
 }

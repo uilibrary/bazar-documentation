@@ -1,18 +1,75 @@
-<h1 className="text-primary">Layouts</h1>
+<h1 className="text-primary">Customer Dashboard Layout</h1>
 
-Folder location: `src/components/layouts`
+Folder location: `src/components/layouts/customer-dashboard`
+
+##### Name - `CustomerDashboardLayout`
 
 <br />
 
-###### 3. `CustomerDashboardLayout`
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <img src="/user-dashboard.png" width="400" />
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-`CustomerDashboardLayout` is used in following pages
+##### Example - `CustomerDashboardLayout` example code
 
-```ts
-1. Wish List -> '/pages/wish-list'
-2. Support Tickets -> '/pages/support-tickets'
-3. Orders and Order Details Page -> '/pages/orders'
-4. Profile and Edit Profile Page -> '/pages/profile'
-5. Address and Address Details page -> '/pages/address'
-6. Payment Methods and Payment Method Details Page -> '/pages/payment-methods'
+```jsx
+import CustomerDashboardLayout from 'components/layouts/customer-dashboard'
+
+const Example = () => {
+  return <CustomerDashboardLayout>{children}</CustomerDashboardLayout>
+}
 ```
+
+##### Inside Components - `CustomerDashboardLayout` used inside components
+
+- [ShopLayout1](https://bazaar-doc.netlify.app/layouts/shop-layout-1)
+- [Navigations](https://bazaar-doc.netlify.app/layout-components/navigations)
+
+##### Used - `CustomerDashboardLayout` is used in following pages
+
+- [Wish List](https://bazar-react.vercel.app/wish-list)
+- [User Orders](https://bazar-react.vercel.app/orders)
+- [User Profile](https://bazar-react.vercel.app/profile)
+- [User Address](https://bazar-react.vercel.app/address)
+- [Support Tickets](https://bazar-react.vercel.app/support-tickets)
+- [Payment Methods](https://bazar-react.vercel.app/payment-methods)
+
+##### Props - `CustomerDashboardLayout` Prop List:
+
+<br />
+
+<table>
+
+<thead>
+  <tr>
+    <td>
+      <b>Name</b>
+    </td>
+    <td>
+      <b>Type</b>
+    </td>
+    <td>
+      <b>Required</b>
+    </td>
+    <td>
+      <b>Default</b>
+    </td>
+  </tr>
+</thead>
+
+  <tbody>
+    <tr>
+      <td>children</td>
+      <td>ReactNode</td>
+      <td>Yes</td>
+      <td>-</td>
+    </tr>
+
+  </tbody>
+</table>

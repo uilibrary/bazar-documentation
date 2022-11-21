@@ -1,14 +1,98 @@
-<h1 className="text-primary">Layouts</h1>
+<h1 className="text-primary">Sale Layout</h1>
 
-Folder location: `src/components/layouts`
+Folder location: `src/components/layouts/SaleLayout`
+
+##### Name - `SaleLayout`
 
 <br />
 
-###### 6. `SaleLayout`
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <img src="/sales-layout.png" width="400" />
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-`SaleLayout` is used in following pages
+##### Example - `SaleLayout` example code
 
-```ts
-1. Sale Version 1 -> '/pages/sale-page-1'
-2. Sale Version 2 -> '/pages/sale-page-2'
+```jsx
+import SaleLayout from 'components/layouts/SaleLayout'
+
+// example 1 - /sale-page-1
+const Example1 = () => {
+  return <SaleLayout>{children}</SaleLayout>
+}
+
+// example 2 - /sale-page-2
+const Example2 = () => {
+  return (
+    <SaleLayout type="two" categoryNav={categoryNav}>
+      {children}
+    </SaleLayout>
+  )
+}
 ```
+
+##### Inside Components - `SaleLayout` used inside components
+
+- [Topbar](https://bazaar-doc.netlify.app/layout-components/topbar)
+- [Header](https://bazaar-doc.netlify.app/layout-components/header)
+- [Navbar](https://bazaar-doc.netlify.app/layout-components/navbar)
+- [Footer](https://bazaar-doc.netlify.app/layout-components/footer)
+- [MobileNavigationBar](https://bazaar-doc.netlify.app/layout-components/mobile-navigation)
+
+##### Used - `SaleLayout` is used in following pages
+
+- [Sale-1](https://bazar-react.vercel.app/sale-page-1)
+- [Sale-2](https://bazar-react.vercel.app/sale-page-2)
+
+##### Props - `SaleLayout` Prop List:
+
+<br />
+
+<table>
+
+<thead>
+  <tr>
+    <td>
+      <b>Name</b>
+    </td>
+    <td>
+      <b>Type</b>
+    </td>
+    <td>
+      <b>Required</b>
+    </td>
+    <td>
+      <b>Default</b>
+    </td>
+  </tr>
+</thead>
+
+  <tbody>
+    <tr>
+      <td>children</td>
+      <td>ReactNode</td>
+      <td>Yes</td>
+      <td>-</td>
+    </tr>
+
+    <tr>
+      <td>type</td>
+      <td>one | two</td>
+      <td>Optional</td>
+      <td>one</td>
+    </tr>
+
+    <tr>
+      <td>categoryNav</td>
+      <td>ReactElement</td>
+      <td>if type `two` then it's required</td>
+      <td>-</td>
+    </tr>
+
+  </tbody>
+</table>

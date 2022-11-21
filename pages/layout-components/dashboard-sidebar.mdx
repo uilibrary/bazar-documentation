@@ -1,0 +1,78 @@
+<h1 className="text-primary">Dashboard Sidebar</h1>
+
+It's only used for vendor/admin dashboard.
+
+Folder location: `src/components/layouts/vendor-dashboard/DashboardSidebar`
+
+##### Example - `DashboardSidebar` example code
+
+```jsx
+import DashboardSidebar from './DashboardSidebar'
+
+const Example = () => {
+  return (
+    <DashboardSidebar
+      sidebarCompact={sidebarCompact}
+      showMobileSideBar={showMobileSideBar}
+      setSidebarCompact={handleCompactToggle}
+      setShowMobileSideBar={handleMobileDrawerToggle}
+    />
+  )
+}
+```
+
+##### Used - `DashboardSidebar` is used in only vendor dashboard layout
+
+- [VendorDashboardLayout](https://bazaar-doc.netlify.app/layouts/vendor-dashboard)
+
+##### Props - `DashboardSidebar` Prop List:
+
+<br />
+
+<table>
+
+<thead>
+  <tr>
+    <td>
+      <b>Name</b>
+    </td>
+    <td>
+      <b>Type</b>
+    </td>
+    <td>
+      <b>Required</b>
+    </td>
+    <td>
+      <b>Default</b>
+    </td>
+  </tr>
+</thead>
+
+  <tbody>
+    <tr>
+      <td>sidebarCompact</td>
+      <td>boolean</td>
+      <td>true</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>showMobileSideBar</td>
+      <td>boolean</td>
+      <td>true</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>setSidebarCompact</td>
+      <td>function</td>
+      <td>true</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>setShowMobileSideBar</td>
+      <td>function</td>
+      <td>true</td>
+      <td>-</td>
+    </tr>
+
+  </tbody>
+</table>
