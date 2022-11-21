@@ -8,5 +8,6 @@
   "settings": "Settings",
   "icons": "Icons",
   "mockserver": "Data fetching",
-  "data-structure": "Data Structure"
+  "data-structure": "Data Structure",
+  "lib": "Utils Functions"
 }
