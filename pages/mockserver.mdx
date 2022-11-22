@@ -5,14 +5,14 @@
 Each demo page gets its data by using `getStaticProps` function;
 
 For example market-1.tsx fetching data in its
-`getStaticProps` function. This function uses REST api to get data. HTTP calls are made in `__server__/__api__/market-1` file.
+`getStaticProps` function. This function uses REST api to get data. HTTP calls are made in `utils/__api__/market-1` file.
 
 `axios` is used for calling the api, you can use any library you want.
 
 ### API Function
 
 ```ts
-// __server__/__api__/
+// utils/__api__
 
 const recentPurchase = async () => {
   const response = await axios.get('/api/recent-purchase')
@@ -23,7 +23,7 @@ const recentPurchase = async () => {
 ### API Function Call from Client Side
 
 ```ts
-import api from '__server__/__api__/grocery1-shop'
+import api from 'utils/__api__/grocery1-shop'
 
 export async function getStaticProps() {
   const popularProducts = await api.getPopularProducts()
