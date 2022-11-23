@@ -10,8 +10,8 @@ export default {
       >
         <img src="/favicon.ico" width="100%" alt="Bazar" />
       </span>
-      <span className="text-primary font-normal hidden md:inline">
-        Bazar Documentation
+      <span className="font-normal hidden md:inline">
+        Bazaar Documentation
       </span>
     </>
   ),
