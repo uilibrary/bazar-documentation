@@ -1,8 +1,10 @@
-<h1 className="text-primary">Utils Function</h1>
+# Utils Function
 
-Folder location: `src/lib.ts`
+import { Callout } from 'nextra-theme-docs'
 
-##### Name - `getDateDifference`
+<Callout>Folder location: `src/lib.ts`</Callout>
+
+## getDateDifference
 
 ```ts
 import ceil from 'lodash/ceil'
@@ -26,7 +28,7 @@ function getDateDifference(date: string | number | Date) {
 }
 ```
 
-##### Name - `calculateDiscount`
+## calculateDiscount
 
 This function take 2 argument then remove discount from original price and return new price
 
@@ -37,7 +39,7 @@ function calculateDiscount(price: number, discount: number) {
 }
 ```
 
-##### Name - `calculateDiscount`
+## currency
 
 Create currency type dynamically via [Runtime config](https://nextjs.org/docs/api-reference/next.config.js/runtime-configuration)
 

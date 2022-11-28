@@ -1,53 +1,31 @@
-<h1 className="text-primary">Dashboard Navbar</h1>
+# Dashboard Navbar
 
 It's only used for vendor/admin dashboard.
 
-Folder location: `src/components/layouts/vendor-dashboard/DashboardNavbar`
+import { Callout } from 'nextra-theme-docs'
 
-##### Example - `DashboardNavbar` example code
+<Callout>
+  Folder location: `src/components/layouts/vendor-dashboard/DashboardNavbar`
+</Callout>
+
+## Examples
 
 ```jsx
 import DashboardNavbar from './DashboardNavbar'
+
+const handleMobileDrawerToggle = () => {}
 
 const Example = () => {
   return <DashboardNavbar handleDrawerToggle={handleMobileDrawerToggle} />
 }
 ```
 
-##### Used - `DashboardNavbar` is used in only vendor dashboard layout
+## Used
 
 - [VendorDashboardLayout](https://bazaar-doc.netlify.app/layouts/vendor-dashboard)
 
-##### Props - `DashboardNavbar` Prop List:
+## Props
 
-<br />
-
-<table>
-
-<thead>
-  <tr>
-    <td>
-      <b>Name</b>
-    </td>
-    <td>
-      <b>Type</b>
-    </td>
-    <td>
-      <b>Required</b>
-    </td>
-    <td>
-      <b>Default</b>
-    </td>
-  </tr>
-</thead>
-
-  <tbody>
-    <tr>
-      <td>handleDrawerToggle</td>
-      <td>function</td>
-      <td>true</td>
-      <td>-</td>
-    </tr>
-
-  </tbody>
-</table>
+| Name               |   Type   | Required | Default |
+| :----------------- | :------: | -------: | ------- |
+| handleDrawerToggle | function |      Yes | -       |

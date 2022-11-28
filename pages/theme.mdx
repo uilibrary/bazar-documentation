@@ -1,11 +1,11 @@
-<h1 className="text-primary">Bazar Theme Setup</h1>
+# Bazar Theme Setup
 
 - theme/MuiTheme.tsx is the main theme file.
 - theme/themeColors.ts Contains theme colors (Primary, Secondary & etc.)
 - theme/components.js Overrides the MUI default component styles
 - theme/typography.ts Sets fontFamily and fontSize
 
-### Theme folder structure:
+## Theme folder structure:
 
 ```ts
 src/
@@ -18,10 +18,12 @@ src/
     ├── typography.ts
 ```
 
-<h4>1. Components</h4>
+## Components
+
 Overrides the component styles of the mui inside `src/theme/components`
 
-<h4>2. Theme Color</h4>
+## Theme Color
+
 Override or Change the colors inside `src/theme/themeColors`
 
 ```js
@@ -66,7 +68,7 @@ export const themeColors = {
 }
 ```
 
-<h4>3. Theme Options</h4>
+## Theme Options
 
 > We have multiple color theme for different shops. E.G. Default, Grocery, Health & etc. `themeOptions.ts` file returns one color theme based on currently displayed demo on browser(by detecting url path)
 
@@ -157,7 +159,8 @@ const themeOptions = (publicRuntimeConfig: any, pathname: string) => {
 export default themeOptions
 ```
 
-<h4>4. Typography</h4>
+## Typography
+
 Override or Change the **fontSize** and **fontFamily** inside `src/theme/typography`
 
 ```ts

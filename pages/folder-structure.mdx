@@ -1,8 +1,8 @@
-<h1 className="text-primary">Folder Structure</h1>
+# Folder Structure
 
 > **/pages/\_app.tsx** is the main entry file. Next.js follows file system based routing. Each file in `pages` folder is a route.
 
-```ts
+```js
 bazar-react/
 ├── public/
 |   └── assets/
@@ -19,8 +19,6 @@ bazar-react/
     ├── 50+ Other pages
 ├── src/
 |   ├── __server__/
-|   |   ├── __api__
-|   |   |   ├── all api functions create inside
 |   |   ├── __db__
 |   |   |   ├── all dummy data inside
 |   ├── animations
@@ -39,6 +37,8 @@ bazar-react/
 |   |   └── Includes bigger components (these components contain hard coded data)
 |   ├── theme
 |   ├── utils
+|   |   ├── __api__
+|   |   |   ├── all api functions create inside
 |   ├── lib
 └── README.md
 ```
@@ -50,8 +50,9 @@ bazar-react/
 - Bigger static components are located in `src/page-sections`
   - Static component means, these components has static data which you need to modify
 
-```ts
+```markdown
 // src/page-sections
+
 1. admin
 2. checkout
 3. dashboard
@@ -60,13 +61,13 @@ bazar-react/
 6. gadget-shop
 7. giftshop
 8. grocery1
-8. grocery2
-9. grocery3
-10. health-beauty
-11. landing
-12. orders
-13. payments
-14. sessions
-15. site-settings
-16. superstore-shop
+9. grocery2
+10. grocery3
+11. health-beauty
+12. landing
+13. orders
+14. payments
+15. sessions
+16. site-settings
+17. superstore-shop
 ```
