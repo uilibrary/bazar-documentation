@@ -9,5 +9,6 @@
   "icons": "Icons",
   "mockserver": "Data fetching",
   "data-structure": "Data Structure",
-  "lib": "Utils Functions"
+  "lib": "Utils Functions",
+  "translation": "Translation"
 }

@@ -56,4 +56,7 @@ export default {
   footer: {
     text: <p className="m-auto">MIT {new Date().getFullYear()} © UILib</p>,
   },
+  sidebar: {
+    defaultMenuCollapseLevel: 0,
+  },
 }
