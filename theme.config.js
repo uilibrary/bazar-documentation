@@ -1,8 +1,9 @@
 export default {
-  project: {
-    link: 'https://github.com/uilibrary/bazar-documentation',
-  },
-  docsRepositoryBase: 'https://github.com/uilibrary/bazar-documentation',
+  // project: {
+  //   link: 'https://github.com/uilibrary/bazar-documentation',
+  // },
+  docsRepositoryBase: 'mailto:support@ui-lib.com',
+  // docsRepositoryBase: 'https://support.ui-lib.com',
   titleSuffix: ' – Bazaar React Ecommerce Template',
   logo: (
     <>
@@ -52,11 +53,10 @@ export default {
     </>
   ),
   footer: false,
-  editLink: { text: 'Edit this page on GitHub' },
+  editLink: { text: 'Question? Give us feedback →' },
   footer: {
     text: <p className="m-auto">MIT {new Date().getFullYear()} © UILib</p>,
   },
-  sidebar: {
-    defaultMenuCollapseLevel: 0,
-  },
+  sidebar: { defaultMenuCollapseLevel: 0 },
+  feedback: { content: null },
 }
