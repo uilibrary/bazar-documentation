@@ -2,7 +2,7 @@
 
 import { Callout } from 'nextra-theme-docs'
 
-<Callout>Folder location: `src/components/layouts/ShopLayout1`</Callout>
+<Callout>Folder location: `src/components/layouts/shop-layout-1`</Callout>
 
 <br />
 
@@ -12,27 +12,12 @@ import { Callout } from 'nextra-theme-docs'
 
 Many different `ShopLayout1` usage in this templates
 
-```jsx
-import ShopLayout1 from 'components/layouts/ShopLayout1'
+```jsx {1} copy
+// src/app/(layout-1)/layout.jsx
+import { ShopLayout1 } from 'components/layouts/shop-layout-1'
 
-// example 1 - /market-1
-const Example1 = () => {
+export default function Layout1({ children }) {
   return <ShopLayout1>{children}</ShopLayout1>
-}
-
-// example 2 - /fashion-shop-1
-const Example2 = () => {
-  return <ShopLayout1 showTopbar={false}>{children}</ShopLayout1>
-}
-
-// example 3 - /grocery3
-const Example3 = () => {
-  return <ShopLayout1 showNavbar={false}>{children}</ShopLayout1>
-}
-
-// example 4 - /market-2
-const Example4 = () => {
-  return <ShopLayout1 topbarBgColor="red">{children}</ShopLayout1>
 }
 ```
 
@@ -48,18 +33,15 @@ const Example4 = () => {
 
 - [Market-1](https://bazar-react.vercel.app/market-1)
 - [Market-2](https://bazar-react.vercel.app/market-2)
-- [Grocery-3](https://bazar-react.vercel.app/grocery3)
+- [Grocery-3](https://bazar-react.vercel.app/grocery-3)
 - [Gift-Shop](https://bazar-react.vercel.app/gift-shop)
-- [Fashion-1](https://bazar-react.vercel.app/fashion-shop)
-- [Fashion-2](https://bazar-react.vercel.app/fashion-shop-2)
-- [Fashion-3](https://bazar-react.vercel.app/fashion-shop-3)
+- [Fashion-1](https://bazar-react.vercel.app/fashion-1)
+- [Fashion-2](https://bazar-react.vercel.app/fashion-2)
+- [Fashion-3](https://bazar-react.vercel.app/fashion-3)
 - [Furniture-Shop](https://bazar-react.vercel.app/furniture-shop)
 
 ## Props
 
-| Name          |   Type    | Required | Default |
-| :------------ | :-------: | -------: | ------- |
-| children      | ReactNode |      Yes | -       |
-| showTopbar    |  boolean  | Optional | true    |
-| showNavbar    |  boolean  | Optional | true    |
-| topbarBgColor |  string   | Optional | -       |
+| Name     |   Type    | Required | Default |
+| :------- | :-------: | -------: | ------- |
+| children | ReactNode |      Yes | -       |

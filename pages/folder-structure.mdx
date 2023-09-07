@@ -1,45 +1,110 @@
-# Folder Structure
+### Folder Structure
 
-> **/pages/\_app.tsx** is the main entry file. Next.js follows file system based routing. Each file in `pages` folder is a route.
+> An organized folder system makes it easier to find what you need. The directory `bazaar-next/` contains the folder hierarchy.
 
-```js
+- `public/` : Get all static files, such as JPGs, PNGs SVGs, and PDFs, inside of this folder.
+
+- `src/_server_/` : Using [axios-mock-adapeter](https://www.npmjs.com/package/axios-mock-adapter), fetch the entire server API from this folder.
+
+- `src/app/` : The project had more than 55 pages in total, and this folder contained all of the page folders. For creating page we follow the next 13 app router approach. If you want to learn more about go here [Next.js Routing](https://nextjs.org/docs/app/building-your-application/routing)
+
+- `src/components/` : We created a large number of reusable components for the entire project. Each reusable component was taken from this folder.
+
+- `src/contexts/` : This folder contains all global contexts, including SettingsContext (for site settings) and CartContext (for product cart).
+
+- `src/data/` : All shared data, including countries, navigation, and navbar-navigation, are contained in this folder.
+
+- `src/hooks/` : All global hooks are found in this folder. such as useCart (for a shopping cart) and useSettings (for site settings).
+
+- `src/icons/` : Many icon components were used throughout the entire project. This folder contains all of the icon components.
+
+- `src/page-sections/` : There were more than 55 pages total in the project, and inside each page's section (components, styled components, and hooks) were pre-existing and based on the page name. As example, for checkout page `page-sections/checkout`
+
+- `src/theme/` : The project theme setup, theme options, and mui override components are located from here.
+
+```
 bazaar-react/
 ├── public/
 |   └── assets/
 |       └── images/
-├── pages/
-    ├── address
-    ├── admin
-    ├── orders
-    ├── payment-methods
-    ├── product
-    ├── profile
-    ├── shops
-    ├── support
-    ├── 50+ Other pages
 ├── src/
 |   ├── __server__/
 |   |   ├── __db__
 |   |   |   ├── all dummy data inside
 |   ├── animations
+|   ├── app/
+|   |   ├── (admin-dashboard)
+|   |   |   ├── admin
+|   |   |   ├── vendor
+|   |   |   └── layout.jsx
+|   |   |
+|   |   ├── (auth)
+|   |   |   ├── login
+|   |   |   ├── register
+|   |   |   ├── reset-password
+|   |   |   └── layout.jsx
+|   |   |
+|   |   ├── (layout-1)
+|   |   |   ├── market-1
+|   |   |   ├── market-2
+|   |   |   ├── fashion-1
+|   |   |   ├── fashion-2
+|   |   |   ├── fashion-3
+|   |   |   ├── grocery-3
+|   |   |   ├── gadget-shop
+|   |   |   ├── furniture-shop
+|   |   |   └── many more page folders
+|   |   |
+|   |   ├── (layout-2)
+|   |   |   ├── grocery-1
+|   |   |   ├── grocery-2
+|   |   |   ├── health-beauty-shop
+|   |   |   ├── checkout-alternative
+|   |   |   └── layout.jsx
+|   |   |
+|   |   ├── (sales)
+|   |   |   ├── sales-1
+|   |   |   └── sales-2
+|   |   |
+|   |   ├── page.jsx
+|   |   ├── layout.jsx
+|   |   ├── loading.jsx
+|   |   ├── not-found.jsx
+|   |   |
 |   ├── components/
-|   |   ├── icons
+|   |   ├── accordion
+|   |   ├── banners
+|   |   ├── carousel
+|   |   ├── carousel-cards
+|   |   ├── categories
+|   |   ├── category-cards
+|   |   ├── navbar
 |   |   ├── layouts
-|   |   |   ├── customer-dashboard
-|   |   |   ├── vendor-dashboard
-|   |   |   └── And shop layouts
-|   |   └── Includes reusable atomic components
-|   ├── contexts
+|   |   └── Includes many more reeusable components folder
+|   |
+|   ├── contexts/
+|   |   ├── CartContext.jsx
+|   |   ├── SettingContext.jsx
+|   |
 |   ├── data
 |   ├── hooks
+|   ├── i18n
+|   ├── icons
+|   ├── lib
 |   ├── models
 |   ├── page-sections
-|   |   └── Includes bigger components (these components contain hard coded data)
+|   |   ├── cart
+|   |   ├── checkout
+|   |   ├── customer-dashboard
+|   |   ├── fashion-1
+|   |   ├── fashion-2
+|   |   ├── fashion-3
+|   |   └── Few more folders
+|   |
 |   ├── theme
 |   ├── utils
 |   |   ├── __api__
-|   |   |   ├── all api functions create inside
-|   ├── lib
+|   |   |   └── all api functions create inside
 └── README.md
 ```
 
@@ -49,25 +114,3 @@ bazaar-react/
 - Layout components are located in `src/components/layouts`. Read more at [Layout documentation](/layouts/shop-layout-1)
 - Bigger static components are located in `src/page-sections`
   - Static component means, these components has static data which you need to modify
-
-```markdown
-// src/page-sections
-
-1. admin
-2. checkout
-3. dashboard
-4. fashion-shop
-5. furniture-shop
-6. gadget-shop
-7. giftshop
-8. grocery1
-9. grocery2
-10. grocery3
-11. health-beauty
-12. landing
-13. orders
-14. payments
-15. sessions
-16. site-settings
-17. superstore-shop
-```

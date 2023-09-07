@@ -2,10 +2,7 @@
 
 ## REST API
 
-Each demo page gets its data by using `getStaticProps` function;
-
-For example market-1.tsx fetching data in its
-`getStaticProps` function. This function uses REST api to get data. HTTP calls are made in `utils/__api__/market-1` file.
+For data fetching in the next.js app follow this documentation [Data fetching](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating)
 
 `axios` is used for calling the api, you can use any library you want.
 
@@ -13,24 +10,20 @@ For example market-1.tsx fetching data in its
 
 ```ts
 // utils/__api__
-
 const recentPurchase = async () => {
   const response = await axios.get('/api/recent-purchase')
   return response.data
 }
 ```
 
-### API Function Call from Client Side
+### API Function Call from Page
 
-```ts
-import api from 'utils/__api__/grocery1-shop'
+```js {1,4} copy
+import api from 'utils/__api__/vendor'
 
-export async function getStaticProps() {
-  const popularProducts = await api.getPopularProducts()
-
-  return {
-    props: { popularProducts },
-  }
+export default async function Reviews() {
+  const reviews = await api.getAllProductReviews()
+  return <ReviewsPageView reviews={reviews} />
 }
 ```
 
@@ -39,17 +32,18 @@ export async function getStaticProps() {
 ### Note
 
 - We use mock server for demo purpose. You need to remove this from the template.
-- Remove the import from **pages/\_app.tsx**
+- Remove the import from **app/layout.jsx**
 
-```ts
-// _app.tsx
+```js {4}
+// app/layout.jsx
+
 // Remove this import
-import '../src/__server__'
+import '__server__'
 ```
 
 ### Fake API example
 
-```ts
+```js
 // src/__server__/__db__/market-2/index.ts
 
 // get all categories

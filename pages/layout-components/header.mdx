@@ -2,16 +2,15 @@
 
 import { Callout } from 'nextra-theme-docs'
 
-<Callout>Folder location: `src/components/header/Header`</Callout>
+<Callout>Folder location: `src/components/header`</Callout>
 
 ## Examples
 
 ```jsx
-import Header from 'components/header/Header'
-import SearchInput from 'components/search-box/SearchInput'
-import SearchInputWithCategory from 'components/search-box/SearchInputWithCategory'
+import { Header } from 'components/header'
+import { SearchInput, SearchInputWithCategory } from 'components/search-box'
 
-// example 1 - SaleLayout
+// example 1 - SalesLayout
 const Example1 = () => {
   return <Header searchInput={<SearchInputWithCategory />} />
 }

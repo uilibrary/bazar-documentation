@@ -1,21 +1,90 @@
 # Translation
 
-For Translation in this template use package
+Multiple languages feature is an important for your app. To have this enabled the app uses [i18next](https://github.com/i18next/next-i18next).
 
-[Next i18next](https://github.com/i18next/next-i18next)
+## How it works
 
-## Add New Laguage
+- At first, i18next library needs a config and initialization file, in this case,`src/i18n` file.
 
-- Add new locale **next-i18next.config.js** inside this file
+```js
+import i18next from 'i18next'
+import { initReactI18next } from 'react-i18next'
 
-```ts
-module.exports = {
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'de'],
+const resources = {
+  en: {
+    translation: {
+      'Bounce Rate': 'Bounce Rate',
+    },
   },
+  es: {
+    translation: {
+      'Bounce Rate': 'Porcentaje',
+    },
+  },
+}
+
+i18next.use(initReactI18next).init({
+  resources,
+  lng: 'en',
+  fallbackLng: 'en',
+  interpolation: { escapeValue: false },
+})
+```
+
+- Thereupon, Import initialization file in the `app/layout.jsx` then i18next added globally in your projects
+
+```jsx {1}
+import 'i18n'
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  )
 }
 ```
 
-- Create a folder inside public folder
+- Then using the translation feature in your whole app via `useTranslation` hook
+
+```jsx {1, 4, 5}
+import { useTranslation } from 'react-i18next'
+
+const Translation = () => {
+  const { t } = useTranslation()
+  return <h1>{t('Bounce Rate')}</h1>
+}
+```
+
+## How to remove ?
+
+- At first, Remove i18n import file from app/layout.jsx component
+
+```jsx {1}
+import 'i18n' // REMOVE THIS
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  )
+}
+```
+
+- After that, Delete the `src/i18n` folder from app
+- At last, Uninstall dependecies i18next and react-i18next
+
+```sh
+npm uninstall i18next react-i18next
+```
+
+or
+
+```sh
+yarn remove i18next react-i18next
+```
+
+## Resource
+
 - Follow their documentation - [Next i18next](https://github.com/i18next/next-i18next)

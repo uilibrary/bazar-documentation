@@ -1,14 +1,14 @@
 # Icons
 
-Bazaar uses SVG icons, icons are located in `src/components/icons`.
+Bazaar uses SVG icons, icons are located in `src/icons`.
 
 ## Using Icon
 
-All icons are exported as `appIcons` in `src/components/icons/index.ts`.  
+All icons are exported as `appIcons` in `src/icons/index.ts`.  
 You can refer any icon from there.
 
-```tsx
-import appIcons from 'components/icons'
+```jsx {1,4}
+import appIcons from 'icons'
 
 const Example = () => {
   const HomeIcon = appIcons['Home']
@@ -18,12 +18,12 @@ const Example = () => {
 ```
 
 **Note:** You can create icons as your project requirements.
-Create icon component in `src/components/icons` and add that component in `appIcons` of `src/components/icons/index.ts`.
+Create icon component in `src/icons` and add that component in `appIcons` of `src/icons/index.ts`.
 
-```tsx
-import { SvgIcon, SvgIconProps } from '@mui/material'
+```jsx
+import { SvgIcon } from '@mui/material'
 
-const CartIcon = (props: SvgIconProps) => {
+const CartIcon = (props) => {
   return (
     <SvgIcon {...props} viewBox="0 0 12 14">
       <path

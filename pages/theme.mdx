@@ -1,21 +1,21 @@
 # Bazaar Theme Setup
 
-- theme/MuiTheme.tsx is the main theme file.
-- theme/themeColors.ts Contains theme colors (Primary, Secondary & etc.)
-- theme/components.ts Overrides the MUI default component styles
-- theme/typography.ts Sets fontFamily and fontSize
+- `theme/theme-provider.jsx` is the main theme file.
+- theme/theme-colors.js Contains theme colors (Primary, Secondary & etc.)
+- theme/components.js Overrides the MUI default component styles
+- theme/typography.js Sets fontFamily and fontSize
 
 ## Theme Folder Structure
 
-```ts
+```
 src/
 ├── theme/
-    ├── components.ts
-    ├── MuiTheme.tsx
-    ├── themeColors.ts
-    ├── themeOptions.ts
-    ├── themeOptionsSample.ts
-    ├── typography.ts
+    ├── components.js
+    ├── theme-colors.js
+    ├── theme-options-sample.js
+    ├── theme-options.js
+    ├── theme-provider.jsx
+    ├── typography.js
 ```
 
 ## Components
@@ -24,7 +24,7 @@ Overrides the component styles of the mui inside `src/theme/components`
 
 ## Theme Color
 
-Override or Change the colors inside `src/theme/themeColors`
+Override or Change the colors inside `src/theme/theme-colors`
 
 ```js
 export const primary = {
@@ -70,14 +70,14 @@ export const themeColors = {
 
 ## Theme Options
 
-> We have multiple color theme for different shops. E.G. Default, Grocery, Health & etc. `themeOptions.ts` file returns one color theme based on currently displayed demo on browser(by detecting url path)
+> We have multiple color theme for different shops. E.G. Default, Grocery, Health & etc. `theme-options.js` file returns one color theme based on currently displayed demo on browser(by detecting url path)
 
-Of course you don't need this. You can delete `themeOptions.ts` file and rename `themeOptionsSample.ts` to `themeOptions.ts`
+Of course you don't need this. You can delete `theme-options.js` file and rename `theme-options-sample.js` to `theme-options.js`
 
-Now `themeOptions.ts` file will always return one color theme.
+Now `theme-options.js` file will always return one color theme.
 
-```ts
-const themesOptions: ThemeOptions = {
+```js
+const themesOptions = {
   [THEMES.DEFAULT]: {
     typography,
     breakpoints,
@@ -110,14 +110,14 @@ const themesOptions: ThemeOptions = {
   },
 }
 
-const themeOptions = (publicRuntimeConfig: any, pathname: string) => {
-  let themeOptions: ThemeOptions
+const themeOptions = (publicRuntimeConfig, pathname) => {
+  let themeOptions
 
   /*
     YOU CAN ALSO REMOVE updateTheme function
     AND FOLLOWING ENTIRE switch case BLOCK.
   */
-  const updateTheme = (themeName: string) => {
+  const updateTheme = (themeName) => {
     publicRuntimeConfig.theme = themeName
     themeOptions = themesOptions[publicRuntimeConfig.theme]
   }
@@ -161,58 +161,18 @@ export default themeOptions
 
 ## Typography
 
-Override or Change the **fontSize** and **fontFamily** inside `src/theme/typography`
+Override or Change the typography inside `src/theme/typography`
 
-```ts
+```js
+import { openSans } from 'app/layout'
+
 export const fontSize = 14
-export const fontFamily = [
-  'Open Sans',
-  'Roboto',
-  '-apple-system',
-  'BlinkMacSystemFont',
-  'Segoe UI',
-  'Oxygen',
-  'Ubuntu',
-  'Cantarell',
-  'Fira Sans',
-  'Droid Sans',
-  'Helvetica Neue',
-  'sans-serif',
-].join(',')
 
 export const typography = {
   fontSize,
-  fontFamily,
   htmlFontSize: 16,
+  fontFamily: openSans.style.fontFamily,
   body1: { fontSize },
   body2: { fontSize },
-}
-```
-
-In this project **font family** is added from Google Fonts. To modify the font family go to [Google Font](https://fonts.google.com) and add your Google Font **Link Tag** inside the `pages/_document.tsx`
-
-```tsx
-export default class Bazaar extends Document {
-  render() {
-    return (
-      <Html lang="en">
-        <Head>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;900&display=swap"
-            rel="stylesheet"
-          />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          />
-        </Head>
-
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    )
-  }
 }
 ```

@@ -2,7 +2,7 @@
 
 import { Callout } from 'nextra-theme-docs'
 
-<Callout>Folder location: `src/components/layouts/ShopLayout2`</Callout>
+<Callout>Folder location: `src/components/layouts/shop-layout-2`</Callout>
 
 <br />
 
@@ -10,26 +10,12 @@ import { Callout } from 'nextra-theme-docs'
 
 ## Examples
 
-```jsx
-import ShopLayout2 from 'components/layouts/ShopLayout2'
+```jsx {1} copy
+// src/app/(layout-2)/layout.jsx
+import { ShopLayout2 } from 'components/layouts/shop-layout-2'
 
-// example 1 - /healthbeauty-shop
-const Example1 = () => {
+export default function Layout({ children }) {
   return <ShopLayout2>{children}</ShopLayout2>
-}
-
-// example 2 - /grocery2
-const Example2 = () => {
-  return <ShopLayout2 showTopbar={false}>{children}</ShopLayout2>
-}
-
-// example 3 - /grocery1
-const Example3 = () => {
-  return (
-    <ShopLayout2 showNavbar={false} showTopbar={false}>
-      {children}
-    </ShopLayout2>
-  )
 }
 ```
 
@@ -41,14 +27,12 @@ const Example3 = () => {
 
 ## Used
 
-- [Grocery-1](https://bazar-react.vercel.app/grocery1)
-- [Grocery-2](https://bazar-react.vercel.app/grocery2)
-- [Health and Beauty](https://bazar-react.vercel.app/healthbeauty-shop)
+- [Grocery-1](https://bazar-react.vercel.app/grocery-1)
+- [Grocery-2](https://bazar-react.vercel.app/grocery-2)
+- [Health and Beauty](https://bazar-react.vercel.app/health-beauty-shop)
 
 ## Props
 
-| Name       |   Type    | Required | Default |
-| :--------- | :-------: | -------: | ------- |
-| children   | ReactNode |      Yes | -       |
-| showTopbar |  boolean  | Optional | true    |
-| showNavbar |  boolean  | Optional | true    |
+| Name     |   Type    | Required | Default |
+| :------- | :-------: | -------: | ------- |
+| children | ReactNode |      Yes | -       |

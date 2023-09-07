@@ -1,8 +1,7 @@
 {
+  "sale-layout": "Sale Layout",
   "shop-layout-1": "Shop Layout 1",
   "shop-layout-2": "Shop Layout 2",
-  "customer-dashboard": "Customer Dashboard Layout",
   "vendor-dashboard": "Admin Dashboard Layout",
-  "checkout-layout": "Checkout Nav Layout",
-  "sale-layout": "Sale Layout"
+  "customer-dashboard": "Customer Dashboard Layout"
 }
