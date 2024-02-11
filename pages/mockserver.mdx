@@ -33,14 +33,15 @@ export default async function Reviews() {
 
 ### Note
 
-- We use mock server for demo purpose. You need to remove this from the template.
-- Remove the import from **app/layout.jsx**
+- We used mock server for demo purpose. You need to remove this from the template and integrate your API.
+- Remove `MockEndPoints` from **utils/axiosInstance.ts**
 
 ```js {4}
-// app/layout.jsx
+// utils/axiosInstance.ts
 
 // Remove this import
-import '__server__'
+export const Mock = new MockAdapter(axiosInstance);
+MockEndPoints(Mock);
 ```
 
 ### Fake API example
