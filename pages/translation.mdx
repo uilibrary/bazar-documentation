@@ -6,7 +6,7 @@ Multiple languages feature is an important for your app. To have this enabled th
 
 - At first, i18next library needs a config and initialization file, in this case,`src/i18n` file.
 
-```js
+```js copy showLineNumbers
 import i18next from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
@@ -33,7 +33,7 @@ i18next.use(initReactI18next).init({
 
 - Thereupon, Import initialization file in the `app/layout.jsx` then i18next added globally in your projects
 
-```jsx {1}
+```jsx {1} copy showLineNumbers
 import 'i18n'
 
 export default function RootLayout({ children }) {
@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
 
 - Then using the translation feature in your whole app via `useTranslation` hook
 
-```jsx {1, 4, 5}
+```jsx {1, 4, 5} copy showLineNumbers
 import { useTranslation } from 'react-i18next'
 
 const Translation = () => {
@@ -60,7 +60,7 @@ const Translation = () => {
 
 - At first, Remove i18n import file from app/layout.jsx component
 
-```jsx {1}
+```jsx {1} copy showLineNumbers
 import 'i18n' // REMOVE THIS
 
 export default function RootLayout({ children }) {

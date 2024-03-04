@@ -7,7 +7,7 @@ Bazaar uses SVG icons, icons are located in `src/icons`.
 All icons are exported as `appIcons` in `src/icons/index.ts`.  
 You can refer any icon from there.
 
-```jsx {1,4}
+```jsx {1,4} copy showLineNumbers
 import appIcons from 'icons'
 
 const Example = () => {
@@ -20,35 +20,21 @@ const Example = () => {
 **Note:** You can create icons as your project requirements.
 Create icon component in `src/icons` and add that component in `appIcons` of `src/icons/index.ts`.
 
-```jsx
-import { SvgIcon } from '@mui/material'
+```jsx copy showLineNumbers
+import createSvgIcon from '@mui/material/utils/createSvgIcon'
 
-const CartIcon = (props) => {
-  return (
-    <SvgIcon {...props} viewBox="0 0 12 14">
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M9.39914 0.333008H12V1.66634H10.2531L8.75021 10.1181H8.74327V10.333H1.68701V10.1676L0.49655 3.72698L0.313336 2.99967H8.93042L9.24 1.25869L9.39914 0.333008ZM1.69414 4.33301H8.69333L7.86351 8.99968H2.55667L1.69414 4.33301Z"
-        fill="currentColor"
-      />
-      <path
-        d="M7.1149 13.6663C6.51535 13.6663 6.02932 13.0694 6.02932 12.333C6.02932 11.5966 6.51535 10.9997 7.1149 10.9997C7.71445 10.9997 8.20048 11.5966 8.20048 12.333C8.20048 13.0694 7.71445 13.6663 7.1149 13.6663Z"
-        fill="currentColor"
-      />
-      <path
-        d="M2.2298 12.333C2.2298 13.0694 2.71583 13.6663 3.31537 13.6663C3.91492 13.6663 4.40095 13.0694 4.40095 12.333C4.40095 11.5966 3.91492 10.9997 3.31537 10.9997C2.71583 10.9997 2.2298 11.5966 2.2298 12.333Z"
-        fill="currentColor"
-      />
-    </SvgIcon>
-  )
-}
+const CartX = createSvgIcon(
+  <svg fill="currentColor" viewBox="0 0 640 512">
+    <path d="M96 0C107.5 0 117.4 8.19 119.6 19.51L121.1 32H541.8C562.1 32 578.3 52.25 572.6 72.66L537.6 196.9C524.3 193.7 510.3 192 496 192C427.6 192 368.3 231 339.2 288H170.7L179.9 336H322.9C320.1 346.4 319.1 357.1 319.1 368C319.1 373.4 320.2 378.7 320.7 384H159.1C148.5 384 138.6 375.8 136.4 364.5L76.14 48H24C10.75 48 0 37.26 0 24C0 10.75 10.75 .0003 24 .0003L96 0zM128 464C128 437.5 149.5 416 176 416C202.5 416 224 437.5 224 464C224 490.5 202.5 512 176 512C149.5 512 128 490.5 128 464zM352 368C352 288.5 416.5 224 496 224C575.5 224 640 288.5 640 368C640 447.5 575.5 512 496 512C416.5 512 352 447.5 352 368zM555.3 331.3C561.6 325.1 561.6 314.9 555.3 308.7C549.1 302.4 538.9 302.4 532.7 308.7L496 345.4L459.3 308.7C453.1 302.4 442.9 302.4 436.7 308.7C430.4 314.9 430.4 325.1 436.7 331.3L473.4 368L436.7 404.7C430.4 410.9 430.4 421.1 436.7 427.3C442.9 433.6 453.1 433.6 459.3 427.3L496 390.6L532.7 427.3C538.9 433.6 549.1 433.6 555.3 427.3C561.6 421.1 561.6 410.9 555.3 404.7L518.6 368L555.3 331.3z" />
+  </svg>,
+  'CartX',
+)
 
-export default CartIcon
+export default CartX
 ```
 
 Download SVG icon file from icon library like FontAwesome or any source.  
 Make sure the frame size is 24x24 by using tools like figma. Then export as SVG.  
 Open that svg in code editor and copy the codes inside `<svg>` tag.  
-Use above code structure and paste the svg code inside `<SvgIcon {...props} viewBox="0 0 12 14">`.  
+Use above code structure and paste the svg code inside `createSvgIcon` function.  
 You may need to adjust `viewBox` props value to adjust the size and placement of the icon.

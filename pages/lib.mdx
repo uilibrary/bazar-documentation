@@ -6,7 +6,7 @@ import { Callout } from 'nextra-theme-docs'
 
 ## getDateDifference
 
-```js
+```js copy showLineNumbers
 import formatDistanceStrict from 'date-fns/formatDistanceStrict'
 
 function getDateDifference(date) {
@@ -19,7 +19,7 @@ function getDateDifference(date) {
 
 It takes two arguments, subtracts the discount from the original price, and returns the new price.
 
-```js
+```js copy showLineNumbers
 function calculateDiscount(price, discount) {
   const afterDiscount = Number((price - price * (discount / 100)).toFixed(2))
   return currency(afterDiscount)
@@ -30,7 +30,7 @@ function calculateDiscount(price, discount) {
 
 The price, which is a number, and the length of the fraction are the two arguments it receives.
 
-```js
+```js copy showLineNumbers
 function currency(price, fraction = 2) {
   const formatCurrency = currencyJs(price).format({ precision: fraction })
   return formatCurrency

@@ -26,7 +26,7 @@ Overrides the component styles of the mui inside `src/theme/components`
 
 Override or Change the colors inside `src/theme/theme-colors`
 
-```js
+```js copy showLineNumbers
 export const primary = {
   100: '#FCE9EC',
   200: '#F8C7CF',
@@ -76,7 +76,7 @@ Of course you don't need this. You can delete `theme-options.js` file and rename
 
 Now `theme-options.js` file will always return one color theme.
 
-```js
+```js copy showLineNumbers
 const themesOptions = {
   [THEMES.DEFAULT]: {
     typography,
@@ -163,7 +163,7 @@ export default themeOptions
 
 Override or Change the typography inside `src/theme/typography`
 
-```js
+```js copy showLineNumbers
 import { openSans } from 'app/layout'
 
 export const fontSize = 14

@@ -1,19 +1,14 @@
 export default {
-  // project: {
-  //   link: 'https://github.com/uilibrary/bazar-documentation',
-  // },
-  docsRepositoryBase: 'mailto:support@ui-lib.com',
+  // docsRepositoryBase: 'mailto:support@ui-lib.com',
   // docsRepositoryBase: 'https://support.ui-lib.com',
-  titleSuffix: ' – Bazaar React Ecommerce Template',
+
   logo: (
     <>
-      <span
-        className="mr-2 font-extrabold hidden md:inline"
-        style={{ width: 25 }}
-      >
+      <span className="hidden w-6 mr-2 font-extrabold md:inline">
         <img src="/logo.svg" width="100%" alt="Bazaar" />
       </span>
-      <span className="text-primary font-normal hidden md:inline">
+
+      <span className="hidden font-semibold text-primary md:inline">
         Bazaar Documentation
       </span>
     </>
@@ -53,10 +48,10 @@ export default {
     </>
   ),
   footer: false,
-  editLink: { text: 'Question? Give us feedback →' },
+  editLink: { component: null },
   footer: {
     text: <p className="m-auto">MIT {new Date().getFullYear()} © UILib</p>,
   },
-  sidebar: { defaultMenuCollapseLevel: 0 },
-  feedback: { content: null },
+  sidebar: { defaultMenuCollapseLevel: 1 },
+  feedback: { useLink: () => 'mailto:support@ui-lib.com' },
 }
