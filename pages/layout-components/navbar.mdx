@@ -9,18 +9,18 @@ import { Callout } from 'nextra-theme-docs'
 ```jsx copy showLineNumbers
 import { Navbar } from 'components/navbar'
 
-// example 1 - SaleLayout
-const Example1 = () => {
+// Example 1 - SaleLayout
+export default function Example1() {
   return <Navbar />
 }
 
-// example 2 - ShopLayout1
-const Example2 = () => {
+// Example 2 - ShopLayout1
+export default function Example2() {
   return <Navbar elevation={0} border={1} />
 }
 
-// example 3 - ShopLayout2
-const Example3 = () => {
+// Example 3 - ShopLayout2
+export default function Example3() {
   return <Navbar elevation={0} />
 }
 ```
@@ -28,7 +28,7 @@ const Example3 = () => {
 ## Views
 
 <br />
-<img src="/navbar/navbar-1.png" />
+<img src="/navbar/navbar-1.jpg" />
 
 ## Used
 
@@ -42,5 +42,4 @@ const Example3 = () => {
 | :------------- | :-----: | -------: | ------- |
 | border         | number  | Optional | -       |
 | elevation      | number  | Optional | 2       |
-| navListOpen    | boolean | Optional | false   |
 | hideCategories | boolean | Optional | false   |

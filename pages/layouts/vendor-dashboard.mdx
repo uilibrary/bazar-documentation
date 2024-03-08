@@ -14,11 +14,9 @@ import { Callout } from 'nextra-theme-docs'
 // src/app/(admin-dashboard)/layout.jsx
 import { VendorDashboardLayout } from 'components/layouts/vendor-dashboard'
 
-const Layout = ({ children }) => {
+export default function Example({ children }) {
   return <VendorDashboardLayout>{children}</VendorDashboardLayout>
 }
-
-export default Layout
 ```
 
 ## Inside Components

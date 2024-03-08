@@ -7,41 +7,46 @@ import { Callout } from 'nextra-theme-docs'
 ## Examples
 
 ```jsx copy showLineNumbers
-import { Header } from 'components/header'
+import Header from 'components/header'
 import { SearchInput, SearchInputWithCategory } from 'components/search-box'
 
-// example 1 - SalesLayout
-const Example1 = () => {
-  return <Header searchInput={<SearchInputWithCategory />} />
+// Example 1 - SalesLayout
+export default function Example1() {
+  return <Header midSlot={<SearchInputWithCategory />} />
 }
 
-// example 2 - ShopLayout1
-const Example2 = () => {
-  return <Header isFixed={true} searchInput={<SearchInputWithCategory />} />
+// Example 2 - ShopLayout3
+export default function Example2() {
+
+  return (
+    <Header
+        isFixed={true}
+        midSlot={
+          <div
+            style={{ marginInline: "auto" }}>
+            <NavigationList />
+          </div>
+        }
+    />
+  );
 }
 
-// example 3 - ShopLayout2
-const Example3 = () => {
-  return <Header isFixed={isFixed} searchInput={<SearchInput />} />
+// Example 3 - ShopLayout2
+export default function Example3() {
+  return <Header isFixed={true} midSlot={<SearchInput />} />
 }
 ```
 
 ## Views
 
-##### Example1
+<h2 className="text-xl font-medium mt-8">Example-1</h2>
+<img src="/header/header-1.jpg" className="mt-4 mb-8" />
 
-<br />
-<img src="/header/header-1.png" />
+<h2 className="text-xl font-medium mt-4">Example-2</h2>
+<img src="/header/header-2.jpg" className="mt-4 mb-8" />
 
-##### Example2
-
-<br />
-<img src="/header/header-2.png" />
-
-##### Example3
-
-<br />
-<img src="/header/header-3.png" />
+<h2 className="text-xl font-medium mt-4">Example-3</h2>
+<img src="/header/header-3.png" className="mt-4 mb-8" />
 
 ## Used
 
@@ -51,8 +56,8 @@ const Example3 = () => {
 
 ## Props
 
-| Name        |     Type     | Required | Default |
-| :---------- | :----------: | -------: | ------- |
-| isFixed     |   boolean    | Optional | -       |
-| className   |    string    | Optional | -       |
-| searchInput | ReactElement |      Yes | -       |
+| Name      |   Type    | Required | Default |
+| :-------- | :-------: | -------: | ------- |
+| isFixed   |  boolean  | Optional | -       |
+| className |  string   | Optional | -       |
+| midSlot   | ReactNode |      Yes | -       |

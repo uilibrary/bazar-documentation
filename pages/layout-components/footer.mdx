@@ -7,37 +7,38 @@ import { Callout } from 'nextra-theme-docs'
 ## Examples
 
 ```jsx copy showLineNumbers
-import { Footer1, Footer2, Footer3 } from 'components/footer'
+import { Footer1, Footer2, Footer3, Footer4 } from 'components/footer'
 
-const Example1 = () => {
+export default function Example1() {
   return <Footer1 />
 }
 
-const Example2 = () => {
+export default function Example2() {
   return <Footer2 />
 }
 
-const Example3 = () => {
+export default function Example3() {
   return <Footer3 />
+}
+
+export default function Example4() {
+  return <Footer4 />
 }
 ```
 
 ## Views
 
-##### Example1
+<h2 className="text-xl font-medium mt-8">Example-1</h2>
+<img src="/footer/footer-1.png" className="mt-4 mb-8" />
 
-<br />
-<img src="/footer/footer-1.png" />
+<h2 className="text-xl font-medium mt-4">Example-2</h2>
+<img src="/footer/footer-2.png" className="mt-4 mb-8" />
 
-##### Example2
+<h2 className="text-xl font-medium mt-4">Example-3</h2>
+<img src="/footer/footer-3.png" className="mt-4 mb-8" />
 
-<br />
-<img src="/footer/footer-2.png" />
-
-##### Example3
-
-<br />
-<img src="/footer/footer-3.png" />
+<h2 className="text-xl font-medium mt-4">Example-4</h2>
+<img src="/footer/footer-4.png" className="mt-4 mb-8" />
 
 ## Used
 

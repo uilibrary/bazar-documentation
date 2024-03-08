@@ -13,13 +13,13 @@ import { Callout } from 'nextra-theme-docs'
 ```jsx showLineNumbers copy
 import SaleLayout from 'components/layouts/sales-layout'
 
-// example 1 - /sales-1
-const Example1 = () => {
+// Example 1 - /sales-1
+export default function Layout() {
   return <SaleLayout>{children}</SaleLayout>
 }
 
-// example 2 - /sales-2
-const Example2 = () => {
+// Example 2 - /sales-2
+export default function Layout() {
   return (
     <SaleLayout type="two" categoryNav={categoryNav}>
       {children}

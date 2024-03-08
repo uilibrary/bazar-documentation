@@ -1,9 +1,8 @@
-export default {
-  // docsRepositoryBase: 'mailto:support@ui-lib.com',
-  // docsRepositoryBase: 'https://support.ui-lib.com',
+import { Fragment } from 'react'
 
+export default {
   logo: (
-    <>
+    <Fragment>
       <span className="hidden w-6 mr-2 font-extrabold md:inline">
         <img src="/logo.svg" width="100%" alt="Bazaar" />
       </span>
@@ -11,10 +10,10 @@ export default {
       <span className="hidden font-semibold text-primary md:inline">
         Bazaar Documentation
       </span>
-    </>
+    </Fragment>
   ),
   head: (
-    <>
+    <Fragment>
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,7 +44,7 @@ export default {
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
       <link rel="icon" type="image/svg+xml" href="/logo.svg" />
       <title>Bazaar React Ecommerce Template Documentation</title>
-    </>
+    </Fragment>
   ),
   footer: false,
   editLink: { component: null },
