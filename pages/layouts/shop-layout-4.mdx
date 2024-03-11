@@ -1,0 +1,59 @@
+# Shop Layout 4
+
+import { Callout } from 'nextra-theme-docs'
+
+<Callout>Folder location: `src/components/layouts/shop-layout-4`</Callout>
+
+<br />
+
+<img src="/layout-4.jpg" width="400" />
+
+## Examples
+
+```jsx {1} copy showLineNumbers
+import ShopLayout4 from 'components/layouts/shop-layout-4'
+
+export default function Layout({ children }) {
+  const navigation = [
+    {
+      name: 'Grocery',
+      icon: 'Grocery',
+      path: '/furniture-3/products/grocery',
+      children: [
+        {
+          name: 'Fruits & Vegetables',
+          path: '/furniture-3/products/fruits-vegetables',
+          children: [
+            { name: 'Fruits', path: '/furniture-3/products/fruits' },
+            { name: 'Vegetables', path: '/furniture-3/products/vegetables' },
+          ],
+        },
+        {
+          name: 'Diabetic Food',
+          path: '/furniture-3/products/diabetic-food',
+        },
+      ],
+    },
+  ]
+
+  return <ShopLayout4 navigation={navigation}>{children}</ShopLayout4>
+}
+```
+
+## Inside Components
+
+- [Topbar](https://bazaar-doc.netlify.app/layout-components/topbar)
+- [Header](https://bazaar-doc.netlify.app/layout-components/header)
+
+## Used
+
+- [Medical](https://bazar-react.vercel.app/medical)
+- [Grocery-1](https://bazar-react.vercel.app/grocery-1)
+- [Fashion-3](https://bazar-react.vercel.app/fashion-3)
+
+## Props
+
+| Name       |   Type    | Required | Default |
+| :--------- | :-------: | -------: | ------- |
+| children   | ReactNode |      Yes | -       |
+| navigation | ReactNode |      Yes | -       |
