@@ -1,0 +1,100 @@
+# Gadget 2 - Data Structure
+
+**End point:** `/api/gadget-2/services`  
+**Used in:** Gadget 2, Section7
+
+**Output:**
+
+```js
+[
+  {
+    id: '5f9bd366-9583-4e6d-9b11-abe74b9c5d96',
+    icon: 'Truck',
+    title: 'Worldwide Delivery',
+    description: 'We offer competitive prices on',
+  },
+  ...
+]
+```
+
+---
+
+**End point:** `/api/gadget-2/products?tag=best-seller`  
+**Used in:** Gadget 2, Section2
+
+**Output:**
+
+```js
+[
+  {
+    id: '8ac53dd8-6418-454f-bbb5-29f0b26ac5a5',
+    slug: 'apple-watch',
+    shop: { ... },
+    title: 'Apple Watch',
+    brand: null,
+    price: 110,
+    size: null,
+    colors: [],
+    discount: 25,
+    thumbnail: '/assets/images/products/apple-watch-5.png',
+    images: [ '...', '...' ],
+    categories: [],
+    status: null,
+    reviews: []
+  },
+  ...
+]
+```
+
+---
+
+**End point:** `/api/gadget-2/products?tag=new-arrival`  
+**Used in:** Gadget Shop, Section4
+
+**Output:**
+
+```js
+[
+  {
+    id: '8ac53dd8-6418-454f-bbb5-29f0b26ac5a5',
+    slug: 'apple-watch',
+    shop: { ... },
+    title: 'Apple Watch',
+    brand: null,
+    price: 110,
+    size: null,
+    colors: [],
+    discount: 25,
+    thumbnail: '/assets/images/products/apple-watch-5.png',
+    images: [ '...', '...' ],
+    categories: [],
+    status: null,
+    reviews: []
+  },
+  ...
+]
+```
+
+---
+
+**End point:** `/api/gadget-2/blogs`  
+**Used in:** Gadget 2, Section6
+
+**Output:**
+
+```js
+[
+    {
+        id: "c8f24a5d-4337-4a35-b8a5-2f05dc3201ff",
+        title: "Art of Keeping Home Minimal & Organised.",
+        description: "...",
+        thumbnail: "/assets/images/products/blog-1.png",
+        shop: { ... },
+        user: { ... },
+        createdAt: "24 Feb 2020",
+        slug: "art-of-keeping-home-minimal-and-organised.",
+        comments: 3,
+    },
+    ...
+]
+```

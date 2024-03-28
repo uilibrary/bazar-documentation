@@ -1,0 +1,102 @@
+# Grocery 4 - Data Structure
+
+**End point:** `/api/grocery-4/stories`  
+**Used in:** Grocery-4, grocery-4.jsx
+
+**Output:**
+
+```js
+[
+  {
+    id: 1,
+    url: '#',
+    image: '/assets/images/stories/story-1.jpg',
+    imageBig: '/assets/images/stories/story-1-big.jpg',
+  },
+  ...
+]
+```
+
+---
+
+**End point:** `/api/grocery-4/products`  
+**Used in:** Grocery-4, grocery-4.jsx
+
+**Output:**
+
+```js
+[
+  {
+    id: '8b9f5a78-0dbb-4dd3-a718-aa7342b76901',
+    slug: 'wood-tool',
+    shop: { ... },
+    title: 'Wood Tool',
+    price: 250,
+    size: null,
+    discount: 15,
+    brand: null,
+    thumbnail: '/assets/images/furniture-products/furniture-1.png',
+    images: [ ... ],
+    categories: [],
+    status: null,
+    reviews: [],
+    rating: 4,
+  },
+]
+```
+
+---
+
+**End point:** `/api/grocery-4/products-by-slug`  
+**Used in:** Grocery-4, categories.jsx
+
+**Output:**
+
+```js
+[
+  {
+    id: '8b9f5a78-0dbb-4dd3-a718-aa7342b76901',
+    slug: 'wood-tool',
+    shop: { ... },
+    title: 'Wood Tool',
+    price: 250,
+    size: null,
+    discount: 15,
+    brand: null,
+    thumbnail: '/assets/images/furniture-products/furniture-1.png',
+    images: [ ... ],
+    categories: [],
+    status: null,
+    reviews: [],
+    rating: 4,
+  },
+]
+```
+
+---
+
+**End point:** `/api/grocery-4/categories`  
+**Used in:** Grocery-4, layout.jsx
+
+**Output:**
+
+```js
+[
+  {
+    name: 'Grocery',
+    icon: 'Grocery',
+    path: '#',
+    children: [
+      {
+        name: 'Fruits & Vegetables',
+        path: '/grocery-4/categories/fruits-vegetables',
+        children: [
+          { name: 'Fruits', path: '/grocery-4/categories/fruits' },
+          { name: 'Vegetables', path: '/grocery-4/categories/vegetables' },
+        ],
+      },
+    ],
+  },
+  ...
+]
+```

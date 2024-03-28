@@ -1,14 +1,17 @@
 {
   "market-1": "Market 1",
   "market-2": "Market 2",
-  "furniture": "Furniture",
+  "furniture": "Furniture 1",
+  "furniture-2": "Furniture 2",
   "grocery-1": "Grocery 1",
   "grocery-2": "Grocery 2",
   "grocery-3": "Grocery 3",
+  "grocery-4": "Grocery 4",
   "health-beauty": "Health and Beauty",
   "fashion-1": "Fashion 1",
   "fashion-2": "Fashion 2",
   "fashion-3": "Fashion 3",
   "gift": "Gift",
-  "gadget": "Gadget"
+  "gadget": "Gadget 1",
+  "gadget-2": "Gadget 2"
 }
