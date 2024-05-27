@@ -1,0 +1,22 @@
+# Create strater kit with a command
+
+1. Open terminal at template root folder
+2. Run `npm run set-root`, then choose your homepage
+
+> This will make your chosen shop page as root and **delete** other shop pages
+
+> Make sure package.json has `bazaar-tools` package installed and has following script
+
+```
+"scripts": {
+    ...
+    "set-root": "bazaar set-root",
+    ...
+},
+
+"devDependencies": {
+    ...
+    "bazaar-tools": "^1.0.2",
+    ...
+}
+```
