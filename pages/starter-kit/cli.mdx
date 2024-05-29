@@ -3,7 +3,9 @@
 1. Open terminal at template root folder
 2. Run `npm run set-root`, then choose your homepage
 
-> This will make your chosen shop page as root and **delete** other shop pages
+> This will make your chosen shop page as root and **delete** other shop pages from `app` and section components from `page-sections` folder. 
+
+> If you want to keep section components, use this command `npm run set-root -- --keep-components`
 
 > Make sure package.json has `bazaar-tools` package installed and has following script
 
@@ -16,7 +18,7 @@
 
 "devDependencies": {
     ...
-    "bazaar-tools": "^1.0.2",
+    "bazaar-tools": "^1.0.3",
     ...
 }
 ```
