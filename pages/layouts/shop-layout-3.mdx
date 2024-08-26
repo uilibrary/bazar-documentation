@@ -10,12 +10,63 @@ import { Callout } from 'nextra-theme-docs'
 
 ## Examples
 
-```jsx {1} copy showLineNumbers
-// src/app/(layout-3)/layout.jsx
+```jsx {1,6} copy showLineNumbers
 import ShopLayout3 from 'components/layouts/shop-layout-3'
+import api from 'utils/__api__/layout'
 
-export default function Layout({ children }) {
-  return <ShopLayout3>{children}</ShopLayout3>
+export default async function Example1({ children }) {
+  const data = await api.getLayoutData()
+  return <ShopLayout3 data={data}>{children}</ShopLayout3>
+}
+```
+
+```jsx {1,8} copy showLineNumbers
+import ShopLayout3 from 'components/layouts/shop-layout-3'
+import api from 'utils/__api__/layout'
+
+export default async function Example2({ children }) {
+  const data = await api.getLayoutData()
+
+  return (
+    <ShopLayout3 centeredNavigation showMobileMenu={false} data={data}>
+      {children}
+    </ShopLayout3>
+  )
+}
+```
+
+```jsx {1,8-13} copy showLineNumbers
+import ShopLayout3 from 'components/layouts/shop-layout-3'
+import api from 'utils/__api__/layout'
+
+export default async function Example3({ children }) {
+  const data = await api.getLayoutData()
+
+  return (
+    <ShopLayout3
+      centeredNavigation
+      showMobileMenu={false}
+      showFooter={false}
+      data={data}
+    >
+      {children}
+    </ShopLayout3>
+  )
+}
+```
+
+```jsx {1, 8} copy showLineNumbers
+import ShopLayout3 from 'components/layouts/shop-layout-3'
+import api from 'utils/__api__/layout'
+
+export default async function Example4({ children }) {
+  const data = await api.getLayoutData()
+
+  return (
+    <ShopLayout3 centeredNavigation data={data}>
+      {children}
+    </ShopLayout3>
+  )
 }
 ```
 
@@ -33,6 +84,10 @@ export default function Layout({ children }) {
 
 ## Props
 
-| Name     |   Type    | Required | Default |
-| :------- | :-------: | -------: | ------- |
-| children | ReactNode |      Yes | -       |
+| Name               |   Type    | Required | Default |
+| :----------------- | :-------: | -------: | ------- |
+| data               |  Object   |      Yes | -       |
+| children           | ReactNode |      Yes | -       |
+| showFooter         |  boolean  | Optional | true    |
+| showMobileMenu     |  boolean  | Optional | true    |
+| centeredNavigation |  boolean  | Optional | false   |

@@ -7,21 +7,19 @@ import { Callout } from 'nextra-theme-docs'
 ## Examples
 
 ```jsx copy showLineNumbers
-import { Navbar } from 'components/navbar'
+import { CategoryList } from 'components/categories'
+import { Navbar, NavigationList } from 'components/navbar'
+import LayoutModel from "models/Layout.model";
 
-// Example 1 - SaleLayout
-export default function Example1() {
-  return <Navbar />
-}
-
-// Example 2 - ShopLayout1
-export default function Example2() {
-  return <Navbar elevation={0} border={1} />
-}
-
-// Example 3 - ShopLayout2
-export default function Example3() {
-  return <Navbar elevation={0} />
+export default function Example({ header }: LayoutModel) {
+  return (
+    <Navbar
+      border={1}
+      elevation={0}
+      navigation={<NavigationList navigation={header.navigation} />}
+      categories={<CategoryList categories={header.categoryMenus} />}
+    />
+  )
 }
 ```
 
@@ -32,14 +30,13 @@ export default function Example3() {
 
 ## Used
 
-- [SaleLayout](https://bazaar-doc.netlify.app/layouts/sale-layout)
 - [ShopLayout1](https://bazaar-doc.netlify.app/layouts/shop-layout-1)
-- [ShopLayout2](https://bazaar-doc.netlify.app/layouts/shop-layout-2)
 
 ## Props
 
-| Name           |  Type   | Required | Default |
-| :------------- | :-----: | -------: | ------- |
-| border         | number  | Optional | -       |
-| elevation      | number  | Optional | 2       |
-| hideCategories | boolean | Optional | false   |
+| Name       |   Type    | Required | Default |
+| :--------- | :-------: | -------: | ------- |
+| navigation | ReactNode |      Yes | -       |
+| categories | ReactNode | Optional | -       |
+| border     |  number   | Optional | -       |
+| elevation  |  number   | Optional | 2       |

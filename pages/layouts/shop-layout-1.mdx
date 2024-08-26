@@ -13,11 +13,12 @@ import { Callout } from 'nextra-theme-docs'
 Many different `ShopLayout1` usage in this templates
 
 ```jsx {1} copy showLineNumbers
-// src/app/(layout-1)/layout.jsx
 import ShopLayout1 from 'components/layouts/shop-layout-1'
+import api from 'utils/__api__/layout'
 
-export default function Layout({ children }) {
-  return <ShopLayout1>{children}</ShopLayout1>
+export default async function Layout({ children }) {
+  const data = await api.getLayoutData()
+  return <ShopLayout1 data={data}>{children}</ShopLayout1>
 }
 ```
 
@@ -41,4 +42,5 @@ export default function Layout({ children }) {
 
 | Name     |   Type    | Required | Default |
 | :------- | :-------: | -------: | ------- |
+| data     |  Object   |      Yes | -       |
 | children | ReactNode |      Yes | -       |

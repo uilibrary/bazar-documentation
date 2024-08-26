@@ -1,0 +1,73 @@
+# Layout - Data Structure
+
+**End point:** `/api/layout`  
+**Used in:** Layouts
+
+**Output:**
+
+```js
+{
+  footer: {
+    appStoreUrl: '#',
+    playStoreUrl: '#',
+    logo: '/assets/images/logo.svg',
+    contact: {
+      phone: '+1 1123 456 780',
+      email: 'uilib.help@gmail.com',
+      address: '70 Washington Square South, New York, NY 10012, United States',
+    },
+    about: [
+      { title: 'Careers', url: '#' },
+      { title: 'Our Stores', url: '#' },
+    ],
+    socials: {
+      facebook: 'https://www.facebook.com/',
+      twitter: 'https://twitter.com/',
+      instagram: 'https://www.instagram.com/',
+      youtube: 'https://www.instagram.com/',
+      google: 'https://www.instagram.com/',
+    },
+    description: '...',
+    customers: [
+      { title: 'Help Center', url: '#' },
+      { title: 'Track Your Order', url: '#' },
+      { title: 'Corporate & Bulk Purchasing', url: '#' },
+      { title: 'Returns & Refunds', url: '#' },
+    ],
+  },
+  mobileNavigation: {
+    version1: [
+      { title: 'Home', icon: 'Home', href: '/', badge: false },
+      { title: 'Account', icon: 'User2', href: '', badge: true },
+    ],
+    version2: [
+      { title: 'Home', icon: 'Home', href: '/', badge: false },
+      { title: 'Account', icon: 'User2', href: '/profile', badge: false },
+    ],
+    logo: '/assets/images/bazaar-black-sm.svg',
+  },
+  topbar: {
+    label: 'HOT',
+    title: 'Free Express Shipping',
+    socials: {
+      facebook: 'https://www.facebook.com/',
+      twitter: 'https://twitter.com/',
+      instagram: 'https://www.instagram.com/',
+    },
+    languageOptions: {
+      en: { title: 'EN', value: 'en' },
+      es: { title: 'DE', value: 'de' },
+    },
+  },
+  header: {
+    categories: [
+      { title: 'All Categories', value: '' },
+      { title: 'Car', value: 'car' },
+      { title: 'Clothes', value: 'clothes' }
+    ],
+    logo: '/assets/images/logo2.svg',
+    categoryMenus: [ ... ],
+    navigation: [ ...],
+  },
+}
+```

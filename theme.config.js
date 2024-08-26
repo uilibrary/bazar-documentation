@@ -43,7 +43,7 @@ export default {
       <link rel="icon" type="image/png" sizes="96x96" href="/favicon.ico" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
       <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-      <title>Bazaar React Ecommerce Template Documentation</title>
+      <title>Bazaar Next.js Ecommerce Template Documentation</title>
     </Fragment>
   ),
   footer: false,

@@ -34,7 +34,6 @@ const navbarNavigations = [
       { title: 'Gadget', url: '/gadget-shop' },
     ],
   },
-
   {
     megaMenu: true,
     megaMenuWithSub: false,
@@ -47,8 +46,12 @@ const navbarNavigations = [
     title: 'Categories',
     child: categoriesMegaMenu,
   },
-
-  { megaMenu: false, megaMenuWithSub: false, title: 'Back to Demos', url: '/' },
+  {
+    megaMenu: false,
+    megaMenuWithSub: false,
+    title: 'Back to Demos',
+    url: '/',
+  },
 ]
 ```
 
@@ -90,8 +93,8 @@ const categoriesMegaMenu = [
       {
         title: "Men's Fashion",
         child: [
-          { title: 'T-Shirt', url: '#', Icon: Icons.Shirt },
-          { title: 'Formal Shirt', url: '#', Icon: Icons.UserTie },
+          { title: 'T-Shirt', url: '#', icon: 'Shirt' },
+          { title: 'Formal Shirt', url: '#', icon: 'UserTie' },
         ],
       },
       {

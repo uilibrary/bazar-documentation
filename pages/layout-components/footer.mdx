@@ -7,22 +7,110 @@ import { Callout } from 'nextra-theme-docs'
 ## Examples
 
 ```jsx copy showLineNumbers
-import { Footer1, Footer2, Footer3, Footer4 } from 'components/footer'
+import Link from 'next/link'
+import Image from 'next/image'
+import {
+  Footer1,
+  FooterApps,
+  FooterContact,
+  FooterLinksWidget,
+  FooterSocialLinks,
+} from 'components/footer'
+import { Paragraph } from 'components/Typography'
 
-export default function Example1() {
-  return <Footer1 />
+export default function Example1({ footer }) {
+  return (
+    <Footer1>
+      <Footer1.Brand>
+        <Link href="/">
+          <Image src={footer.logo} alt="logo" width={105} height={50} />
+        </Link>
+
+        <Paragraph mt={1} mb={3} color="grey.500" maxWidth={370}>
+          {footer.description}
+        </Paragraph>
+
+        <FooterApps
+          playStoreUrl={footer.playStoreUrl}
+          appleStoreUrl={footer.appStoreUrl}
+        />
+      </Footer1.Brand>
+
+      <Footer1.Widget1>
+        <FooterLinksWidget title="About Us" links={footer.about} />
+      </Footer1.Widget1>
+
+      <Footer1.Widget2>
+        <FooterLinksWidget title="Customer Care" links={footer.customers} />
+      </Footer1.Widget2>
+
+      <Footer1.Contact>
+        <FooterContact
+          phone={footer.contact.phone}
+          email={footer.contact.email}
+          address={footer.contact.address}
+        />
+
+        <FooterSocialLinks links={footer.socials} />
+      </Footer1.Contact>
+    </Footer1>
+  )
 }
+```
 
-export default function Example2() {
-  return <Footer2 />
-}
+```jsx copy showLineNumbers
+import Box from '@mui/material/Box'
+import LazyImage from 'components/LazyImage'
+import { Paragraph } from 'components/Typography'
+import {
+  Footer3,
+  FooterApps,
+  FooterContact,
+  FooterLinksWidget,
+  FooterSocialLinks,
+} from 'components/footer'
 
-export default function Example3() {
-  return <Footer3 />
-}
+export default function Example2({ footer }) {
+  return (
+    <Fragment>
+      <Footer3>
+        <Footer3.Brand>
+          <Box maxWidth={100}>
+            <LazyImage src={footer.logo} alt="logo" width={105} height={50} />
+          </Box>
 
-export default function Example4() {
-  return <Footer4 />
+          <Paragraph mb={2.5} maxWidth={{ xl: 400 }}>
+            {footer.description}
+          </Paragraph>
+        </Footer3.Brand>
+
+        <Footer3.Widget1>
+          <FooterLinksWidget isDark title="About Us" links={footer.about} />
+        </Footer3.Widget1>
+
+        <Footer3.Widget2>
+          <FooterLinksWidget
+            isDark
+            title="Customer Care"
+            links={footer.customers}
+          />
+        </Footer3.Widget2>
+
+        <Footer3.Contact>
+          <FooterContact
+            color="inherit"
+            phone={footer.contact.phone}
+            email={footer.contact.email}
+            address={footer.contact.address}
+          />
+        </Footer3.Contact>
+      </Footer3>
+
+      <FooterCopyright>
+        <FooterSocialLinks variant="dark" links={footer.socials} />
+      </FooterCopyright>
+    </Fragment>
+  )
 }
 ```
 
@@ -32,15 +120,16 @@ export default function Example4() {
 <img src="/footer/footer-1.png" className="mt-4 mb-8" />
 
 <h2 className="text-xl font-medium mt-4">Example-2</h2>
-<img src="/footer/footer-2.png" className="mt-4 mb-8" />
-
-<h2 className="text-xl font-medium mt-4">Example-3</h2>
-<img src="/footer/footer-3.png" className="mt-4 mb-8" />
-
-<h2 className="text-xl font-medium mt-4">Example-4</h2>
 <img src="/footer/footer-4.png" className="mt-4 mb-8" />
 
 ## Used
 
 - [SaleLayout](https://bazaar-doc.netlify.app/layouts/sale-layout)
 - [ShopLayout1](https://bazaar-doc.netlify.app/layouts/shop-layout-1)
+- [ShopLayout3](https://bazaar-doc.netlify.app/layouts/shop-layout-3)
+
+## Props
+
+| Name     |   Type    | Required | Default |
+| :------- | :-------: | -------: | ------- |
+| children | ReactNode |      Yes | -       |

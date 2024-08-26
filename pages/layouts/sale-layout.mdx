@@ -11,20 +11,12 @@ import { Callout } from 'nextra-theme-docs'
 ## Examples
 
 ```jsx showLineNumbers copy
-import SaleLayout from 'components/layouts/sales-layout'
+import SalesLayout from 'components/layouts/sales-layout'
+import api from 'utils/__api__/layout'
 
-// Example 1 - /sales-1
-export default function Layout() {
-  return <SaleLayout>{children}</SaleLayout>
-}
-
-// Example 2 - /sales-2
-export default function Layout() {
-  return (
-    <SaleLayout type="two" categoryNav={categoryNav}>
-      {children}
-    </SaleLayout>
-  )
+export default async function Layout() {
+  const data = await api.getLayoutData()
+  return <SalesLayout data={data}>{children}</SalesLayout>
 }
 ```
 
@@ -43,7 +35,7 @@ export default function Layout() {
 
 ## Props
 
-| Name     |    Type     | Required | Default |
-| :------- | :---------: | -------: | ------- |
-| children |  ReactNode  |      Yes | -       |
-| type     | (one / two) | Optional | one     |
+| Name     |   Type    | Required | Default |
+| :------- | :-------: | -------: | ------- |
+| data     |  Object   |      Yes | -       |
+| children | ReactNode |      Yes | -       |

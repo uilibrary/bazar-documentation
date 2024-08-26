@@ -7,33 +7,160 @@ import { Callout } from 'nextra-theme-docs'
 ## Examples
 
 ```jsx copy showLineNumbers
-import Header from 'components/header'
+import { Header, HeaderCart, HeaderLogin } from 'components/header'
+import { MobileHeader, HeaderSearch } from "components/header/mobile-header";
 import { SearchInput, SearchInputWithCategory } from 'components/search-box'
+// CUSTOM DATA MODEL
+import LayoutModel from "models/Layout.model";
 
-// Example 1 - SalesLayout
-export default function Example1() {
-  return <Header midSlot={<SearchInputWithCategory />} />
-}
+// Example 1
+export default function Example1({ header, mobileNavigation }: LayoutModel) {
+  const MOBILE_VERSION_HEADER = (
+    <MobileHeader>
+      <MobileHeader.Left>
+        <MobileMenu navigation={header.navigation} />
+      </MobileHeader.Left>
 
-// Example 2 - ShopLayout3
-export default function Example2() {
+      <MobileHeader.Logo logoUrl={mobileNavigation.logo} />
+
+      <MobileHeader.Right>
+        <HeaderSearch>
+          <SearchInput />
+        </HeaderSearch>
+
+        <HeaderLogin />
+        <HeaderCart />
+      </MobileHeader.Right>
+    </MobileHeader>
+  );
 
   return (
-    <Header
-        isFixed={true}
-        midSlot={
-          <div
-            style={{ marginInline: "auto" }}>
-            <NavigationList />
-          </div>
-        }
-    />
-  );
-}
+    <Header mobileHeader={MOBILE_VERSION_HEADER}>
+      <Header.Logo url={header.logo} />
 
-// Example 3 - ShopLayout2
-export default function Example3() {
-  return <Header isFixed={true} midSlot={<SearchInput />} />
+      <Header.Mid>
+        <SearchInputWithCategory categories={header.categories} />
+      </Header.Mid>
+
+      <Header.Right>
+        <HeaderLogin />
+        <HeaderCart />
+      </Header.Right>
+    </Header>
+  )
+}
+```
+
+```jsx copy showLineNumbers
+import Sticky from "components/sticky";
+import { Header, HeaderCart, HeaderLogin } from 'components/header'
+import { MobileHeader, HeaderSearch } from "components/header/mobile-header";
+import { SearchInput, SearchInputWithCategory } from 'components/search-box'
+// CUSTOM DATA MODEL
+import LayoutModel from "models/Layout.model";
+
+// Example 2
+export default function Example2({ header, mobileNavigation, centeredNavigation }: LayoutModel) {
+  const MOBILE_VERSION_HEADER = (
+    <MobileHeader>
+      <MobileHeader.Left>
+        <MobileMenu navigation={header.navigation} />
+      </MobileHeader.Left>
+
+      <MobileHeader.Logo logoUrl={mobileNavigation.logo} />
+
+      <MobileHeader.Right>
+        <HeaderSearch>
+          <SearchInput />
+        </HeaderSearch>
+
+        <HeaderLogin />
+        <HeaderCart />
+      </MobileHeader.Right>
+    </MobileHeader>
+  );
+
+  return (
+      <Sticky fixedOn={0} scrollDistance={300}>
+        <Header mobileHeader={MOBILE_VERSION_HEADER}>
+          <Header.Logo url={header.logo} />
+
+          <Header.Mid>
+            <Box mr="auto" ml={centeredNavigation ? "auto" : "2rem"}>
+              <NavigationList navigation={header.navigation} />
+            </Box>
+          </Header.Mid>
+
+          <Header.Right>
+            <HeaderLogin />
+            <HeaderCart />
+          </Header.Right>
+        </Header>
+
+        <Divider />
+      </Sticky>
+  )
+}
+```
+
+```jsx copy showLineNumbers
+import { useState } from "react";
+import Sticky from "components/sticky";
+import { CategoryList } from "components/categories";
+import { Header, HeaderCart, HeaderLogin } from 'components/header'
+import { MobileHeader, HeaderSearch } from "components/header/mobile-header";
+import { SearchInput, SearchInputWithCategory } from 'components/search-box'
+// CUSTOM DATA MODEL
+import LayoutModel from "models/Layout.model";
+
+// Example 3
+export default function Example3({ header, mobileNavigation, centeredNavigation }: LayoutModel) {
+  const [isFixed, setIsFixed] = useState(false);
+  const toggleIsFixed = useCallback((fixed: boolean) => setIsFixed(fixed), []);
+
+  const MOBILE_VERSION_HEADER = (
+    <MobileHeader>
+      <MobileHeader.Left>
+        <MobileMenu navigation={header.navigation} />
+      </MobileHeader.Left>
+
+      <MobileHeader.Logo logoUrl={mobileNavigation.logo} />
+
+      <MobileHeader.Right>
+        <HeaderSearch>
+          <SearchInput />
+        </HeaderSearch>
+
+        <HeaderLogin />
+        <HeaderCart />
+      </MobileHeader.Right>
+    </MobileHeader>
+  );
+
+  return (
+      <Sticky fixedOn={0} onSticky={toggleIsFixed} scrollDistance={70}>
+        <Header mobileHeader={MOBILE_VERSION_HEADER}>
+          <Header.Logo url={header.logo} />
+
+          {isFixed ? (
+            <Header.CategoryDropdown>
+              <CategoryList categories={header.categoryMenus} />
+            </Header.CategoryDropdown>
+          ) : null}
+
+          <Header.Mid>
+            <SearchInput />
+          </Header.Mid>
+
+          <Header.Right>
+            <HeaderLogin />
+            <HeaderCart />
+          </Header.Right>
+        </Header>
+
+        <Divider />
+      </Sticky>
+  )
 }
 ```
 
@@ -56,8 +183,8 @@ export default function Example3() {
 
 ## Props
 
-| Name      |   Type    | Required | Default |
-| :-------- | :-------: | -------: | ------- |
-| isFixed   |  boolean  | Optional | -       |
-| className |  string   | Optional | -       |
-| midSlot   | ReactNode |      Yes | -       |
+| Name         |   Type    | Required | Default |
+| :----------- | :-------: | -------: | ------- |
+| children     | ReactNode |      Yes | -       |
+| mobileHeader | ReactNode |      Yes | -       |
+| className    |  string   | Optional | -       |

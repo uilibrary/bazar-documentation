@@ -9,8 +9,8 @@ import { Callout } from 'nextra-theme-docs'
 ```jsx copy showLineNumbers
 import { MobileNavigationBar } from 'components/mobile-navigation'
 
-export default function Example() {
-  return <MobileNavigationBar />
+export default function Example({ navigation }) {
+  return <MobileNavigationBar navigation={navigation} />
 }
 ```
 
@@ -23,3 +23,9 @@ export default function Example() {
 
 - [SaleLayout](https://bazaar-doc.netlify.app/layouts/sale-layout)
 - [ShopLayout1](https://bazaar-doc.netlify.app/layouts/shop-layout-1)
+
+## Props
+
+| Name       |   Type    | Required | Default |
+| :--------- | :-------: | -------: | ------- |
+| navigation | Object [] |      Yes | -       |

@@ -7,16 +7,32 @@ import { Callout } from 'nextra-theme-docs'
 ## Examples
 
 ```jsx copy showLineNumbers
-import Topbar from 'components/topbar'
+import { Topbar, TopbarLanguageSelector, TopbarSocialLinks } from "components/topbar";
+// CUSTOM DATA MODEL
+import { Topbar } from 'models/Layout.model'
 
-// Example 1 - SaleLayout
-export default function Example1() {
-  return <Topbar />
+// Example 1
+export default function Example1({ topbar }:{ topbar: Topbar }) {
+  return (
+    <Topbar label={topbar.label} title={topbar.title}>
+      <Topbar.Right>
+        <TopbarLanguageSelector languages={topbar.languageOptions} />
+        <TopbarSocialLinks links={topbar.socials} />
+      </Topbar.Right>
+    </Topbar>
+  )
 }
 
-// Example 2 - ShopLayout1
-export default function Example2() {
-  return <Topbar bgColor="red" />
+// Example 2
+export default function Example2({ topbar }:{ topbar: Topbar }) {
+  return (
+    <Topbar label={topbar.label} title={topbar.title} bgColor="red">
+      <Topbar.Right>
+        <TopbarLanguageSelector languages={topbar.languageOptions} />
+        <TopbarSocialLinks links={topbar.socials} />
+      </Topbar.Right>
+    </Topbar>
+  )
 }
 ```
 
@@ -36,6 +52,9 @@ export default function Example2() {
 
 ## Props
 
-| Name    |  Type  | Required | Default |
-| :------ | :----: | -------: | ------- |
-| bgColor | string | Optional | -       |
+| Name     |   Type    | Required | Default |
+| :------- | :-------: | -------: | ------- |
+| title    |  string   |      Yes | -       |
+| label    |  string   |      Yes | -       |
+| children | ReactNode |      Yes | -       |
+| bgColor  |  string   | Optional | -       |

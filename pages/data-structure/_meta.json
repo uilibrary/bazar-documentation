@@ -3,5 +3,6 @@
   "user-dashboard": "User Dashboard",
   "admin-dashboard": "Admin Dashboard",
   "sales": "Sales",
-  "vendor": "Vendor/Shop"
+  "vendor": "Vendor/Shop",
+  "layout": "Layout"
 }

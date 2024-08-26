@@ -10,33 +10,22 @@ import { Callout } from 'nextra-theme-docs'
 
 ## Examples
 
-```jsx {1} copy showLineNumbers
+```jsx {1,12} copy showLineNumbers
 import ShopLayout4 from 'components/layouts/shop-layout-4'
+import api from 'utils/__api__/furniture-3'
+import layoutApi from 'utils/__api__/layout'
 
-export default function Layout({ children }) {
-  const navigation = [
-    {
-      name: 'Grocery',
-      icon: 'Grocery',
-      path: '/furniture-3/products/grocery',
-      children: [
-        {
-          name: 'Fruits & Vegetables',
-          path: '/furniture-3/products/fruits-vegetables',
-          children: [
-            { name: 'Fruits', path: '/furniture-3/products/fruits' },
-            { name: 'Vegetables', path: '/furniture-3/products/vegetables' },
-          ],
-        },
-        {
-          name: 'Diabetic Food',
-          path: '/furniture-3/products/diabetic-food',
-        },
-      ],
-    },
-  ]
+export default async function Layout({ children }) {
+  const [categories, data] = await Promise.all([
+    api.getCategories(),
+    layoutApi.getLayoutData(),
+  ])
 
-  return <ShopLayout4 navigation={navigation}>{children}</ShopLayout4>
+  return (
+    <ShopLayout4 navigation={categories} data={data}>
+      {children}
+    </ShopLayout4>
+  )
 }
 ```
 
@@ -44,6 +33,7 @@ export default function Layout({ children }) {
 
 - [Topbar](https://bazaar-doc.netlify.app/layout-components/topbar)
 - [Header](https://bazaar-doc.netlify.app/layout-components/header)
+- [MobileNavigationBar](https://bazaar-doc.netlify.app/layout-components/mobile-navigation)
 
 ## Used
 
