@@ -1,0 +1,5 @@
+# Redirect with a 301
+[[redirects]]
+from = "/*"
+to = "https://template-docs.getbazaar.io/"
+status = 301
