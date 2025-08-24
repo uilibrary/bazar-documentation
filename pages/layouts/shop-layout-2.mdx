@@ -12,31 +12,6 @@ import { Callout } from 'nextra-theme-docs'
 
 ```jsx {1} copy showLineNumbers
 import ShopLayout2 from 'components/layouts/shop-layout-2'
-import { Navbar, NavigationList } from 'components/navbar'
-import { CategoryList } from 'components/categories'
-import api from 'utils/__api__/layout'
-
-export default async function Layout({ children }) {
-  const data = await api.getLayoutData()
-
-  const NAVIGATION = (
-    <Navbar
-      elevation={0}
-      navigation={<NavigationList navigation={data.header.navigation} />}
-      categories={<CategoryList categories={data.header.categoryMenus} />}
-    />
-  )
-
-  return (
-    <ShopLayout2 data={data} navbar={NAVIGATION}>
-      {children}
-    </ShopLayout2>
-  )
-}
-```
-
-```jsx {1} copy showLineNumbers
-import ShopLayout2 from 'components/layouts/shop-layout-2'
 import api from 'utils/__api__/layout'
 
 export default async function Layout({ children }) {
@@ -62,4 +37,3 @@ export default async function Layout({ children }) {
 | :------- | :-------: | -------: | ------- |
 | data     |  Object   |      Yes | -       |
 | children | ReactNode |      Yes | -       |
-| navbar   | ReactNode | Optional | -       |

@@ -1,71 +1,60 @@
 # Bazaar Theme Setup
 
-- `theme/theme-provider.jsx` is the main theme file.
-- theme/theme-colors.js Contains theme colors (Primary, Secondary & etc.)
-- theme/components.js Overrides the MUI default component styles
-- theme/typography.js Sets fontFamily and fontSize
+The Bazaar theme system is built on top of Material-UI (MUI) and provides a flexible way to customize the appearance of your e-commerce application. It supports multiple color schemes, responsive breakpoints, typography, and component customizations.
 
 ## Theme Folder Structure
 
 ```
-src/
-├── theme/
-    ├── components.js
-    ├── theme-colors.js
-    ├── theme-options-sample.js
-    ├── theme-options.js
-    ├── theme-provider.jsx
-    ├── typography.js
+src/theme/
+├── core/
+│   ├── index.ts          # Exports all core theme modules
+│   ├── palette.ts        # Color palette definitions
+│   ├── components.ts     # MUI component overrides
+│   ├── typography.ts     # Font and text styling
+│   └── theme-colors.ts   # Color definitions and MUI extensions
+├── theme-provider.tsx    # Theme provider component
+├── theme-options.ts      # Main theme configuration
+├── theme-options-sample.ts # Sample configuration for customization
+├── types.ts             # TypeScript type definitions
+└── utils.ts             # Utility functions for styling
 ```
 
-## Components
+## 1. Basic Theme Setup
 
-Overrides the component styles of the mui inside `src/theme/components`
+The theme is already integrated into your application through the ThemeProvider in `app/layout.tsx`:
 
-## Theme Color
+```jsx
+<ThemeProvider>
+  <RTL>{children}</RTL>
+</ThemeProvider>
+```
 
-Override or Change the colors inside `src/theme/theme-colors`
+## 2. Available Color Schemes
+
+The theme supports multiple color palettes:
+
+- DARK - Default dark theme
+- RED - Red theme (used for grocery stores)
+- GREEN - Green theme (used for grocery-4)
+- ORANGE - Orange theme (used for furniture-2)
+- GOLD - Gold theme (used for furniture-3)
+- PASTE - Paste theme (used for furniture-1, medical)
+- HEALTH - Health theme (used for health-beauty, admin, vendor)
+- GIFT - Gift theme (used for gift-shop)
+- BLUISH - Bluish theme
+- YELLOW - Yellow theme
+
+## 3. Route-Based Theme Switching
+
+The theme automatically changes based on the current route:
 
 ```js copy showLineNumbers
-export const primary = {
-  100: '#FCE9EC',
-  200: '#F8C7CF',
-  300: '#F07D90',
-  400: '#EC6178',
-  500: '#D23F57',
-  600: '#E63E58',
-  700: '#E3364E',
-  800: '#DF2E44',
-  900: '#D91F33',
-}
-
-export const secondary = {
-  100: '#e8e8ee',
-  200: '#b9bacb',
-  300: '#8a8ca8',
-  400: '#5b5d85',
-  500: '#141850',
-  600: '#0F3460',
-  700: '#101340',
-  800: '#0e1138',
-  900: '#0c0e30',
-  main: '#0F3460',
-  dark: '#0c0e30',
-}
-
-export const themeColors = {
-  secondary,
-  error,
-  warning,
-  success,
-  text: { primary: grey[900], secondary: grey[800], disabled: grey[400] },
-  divider: grey[200],
-  grey: { ...grey },
-  paste: { ...paste },
-  info: { ...blue },
-  marron: { ...marron },
-  background: { default: grey[100] },
-}
+const themeMappings = [
+  { paths: ['/grocery-4'], color: COLORS.GREEN },
+  { paths: ['/gift-shop'], color: COLORS.GIFT },
+  { paths: ['/furniture-2'], color: COLORS.ORANGE },
+  { paths: ['/health-beauty', '/admin', '/vendor'], color: COLORS.HEALTH },
+]
 ```
 
 ## Theme Options
@@ -77,76 +66,42 @@ Of course you don't need this. You can delete `theme-options.js` file and rename
 Now `theme-options.js` file will always return one color theme.
 
 ```js copy showLineNumbers
-const themesOptions = {
-  [THEMES.DEFAULT]: {
-    typography,
-    breakpoints,
-    components: { ...components },
-    palette: { primary: { ...primary, light: primary[100] }, ...themeColors },
-  },
-  [THEMES.GROCERY]: {
-    typography,
-    breakpoints,
-    components: { ...components },
-    palette: { primary: { ...primary, light: primary[100] }, ...themeColors },
-  },
-  [THEMES.FURNITURE]: {
-    typography,
-    breakpoints,
-    components: { ...components },
-    palette: { primary: { ...paste, light: paste[100] }, ...themeColors },
-  },
-  [THEMES.HEALTH]: {
-    typography,
-    breakpoints,
-    components: { ...components },
-    palette: { primary: { ...blue, light: blue[100] }, ...themeColors },
-  },
-  [THEMES.GIFT]: {
-    typography,
-    breakpoints,
-    components: { ...components },
-    palette: { primary: { ...marron, light: marron[100] }, ...themeColors },
-  },
-}
+import { type ThemeOptions } from "@mui/material/styles";
+import { components, typography, getPalette } from "./core";
+import { COLORS } from "./types";
 
-export default function themeOptions(pathname) {
-  const themeMappings = [
-    { paths: ['/grocery-4'], theme: THEMES.GREEN },
-    { paths: ['/gift-shop'], theme: THEMES.GIFT },
-    { paths: ['/furniture-2'], theme: THEMES.ORANGE },
-    { paths: ['/furniture-3'], theme: THEMES.GOLD },
-    { paths: ['/furniture-1', '/medical'], theme: THEMES.PASTE },
-    {
-      paths: ['/gadget-3', '/health-beauty', '/admin', '/vendor'],
-      theme: THEMES.HEALTH,
+export default function themeOptions(pathname: string) {
+  const selectedPalette = getPalette(COLORS.DARK);
+
+  const themeOption: ThemeOptions = {
+    typography,
+    components,
+    palette: selectedPalette,
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 960,
+        lg: 1280,
+        xl: 1600,
+        xxl: 1920
+      }
     },
-  ]
+  };
 
-  const selectedMapping = themeMappings.find((mapping) =>
-    mapping.paths.some((path) => pathname.startsWith(path)),
-  )
-
-  const themeOption = themesOptionList[selectedMapping?.theme || THEMES.DEFAULT]
-
-  return themeOption
+  return themeOption;
 }
 ```
 
 ## Typography
 
-Override or Change the typography inside `src/theme/typography`
+Modify `src/theme/core/typography.ts` to change fonts and text styles:
 
 ```js copy showLineNumbers
-import { openSans } from 'app/layout'
-
-export const fontSize = 14
-
-export const typography = {
-  fontSize,
-  htmlFontSize: 16,
-  fontFamily: openSans.style.fontFamily,
-  body1: { fontSize },
-  body2: { fontSize },
-}
+export const typography: Typography = {
+  fontSize: 14,
+  fontFamily: geist.style.fontFamily,
+  h1: { fontSize: 30, fontWeight: 600, lineHeight: 1.5 },
+  h2: { fontSize: 25, fontWeight: 600, lineHeight: 1.5 },
+};
 ```

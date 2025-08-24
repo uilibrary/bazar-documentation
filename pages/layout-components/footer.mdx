@@ -26,9 +26,12 @@ export default function Example1({ footer }) {
           <Image src={footer.logo} alt="logo" width={105} height={50} />
         </Link>
 
-        <Paragraph mt={1} mb={3} color="grey.500" maxWidth={370}>
+        <Typography
+          variant="body1"
+          sx={{ mt: 1, mb: 3, maxWidth: 370, color: 'white', lineHeight: 1.7 }}
+        >
           {footer.description}
-        </Paragraph>
+        </Typography>
 
         <FooterApps
           playStoreUrl={footer.playStoreUrl}
@@ -53,64 +56,28 @@ export default function Example1({ footer }) {
 
         <FooterSocialLinks links={footer.socials} />
       </Footer1.Contact>
+
+      <Footer1.Copyright>
+        <Divider sx={{ borderColor: 'grey.800' }} />
+
+        <Typography
+          variant="body2"
+          sx={{ py: 3, textAlign: 'center', span: { fontWeight: 500 } }}
+        >
+          &copy; Copyright {new Date().getFullYear()} <span>UI Lib</span>, All
+          rights reserved.
+        </Typography>
+      </Footer1.Copyright>
     </Footer1>
   )
 }
 ```
 
 ```jsx copy showLineNumbers
-import Box from '@mui/material/Box'
-import LazyImage from 'components/LazyImage'
-import { Paragraph } from 'components/Typography'
-import {
-  Footer3,
-  FooterApps,
-  FooterContact,
-  FooterLinksWidget,
-  FooterSocialLinks,
-} from 'components/footer'
+import { Footer2 } from 'components/footer'
 
 export default function Example2({ footer }) {
-  return (
-    <Fragment>
-      <Footer3>
-        <Footer3.Brand>
-          <Box maxWidth={100}>
-            <LazyImage src={footer.logo} alt="logo" width={105} height={50} />
-          </Box>
-
-          <Paragraph mb={2.5} maxWidth={{ xl: 400 }}>
-            {footer.description}
-          </Paragraph>
-        </Footer3.Brand>
-
-        <Footer3.Widget1>
-          <FooterLinksWidget isDark title="About Us" links={footer.about} />
-        </Footer3.Widget1>
-
-        <Footer3.Widget2>
-          <FooterLinksWidget
-            isDark
-            title="Customer Care"
-            links={footer.customers}
-          />
-        </Footer3.Widget2>
-
-        <Footer3.Contact>
-          <FooterContact
-            color="inherit"
-            phone={footer.contact.phone}
-            email={footer.contact.email}
-            address={footer.contact.address}
-          />
-        </Footer3.Contact>
-      </Footer3>
-
-      <FooterCopyright>
-        <FooterSocialLinks variant="dark" links={footer.socials} />
-      </FooterCopyright>
-    </Fragment>
-  )
+  return <Footer2 />
 }
 ```
 

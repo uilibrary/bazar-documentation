@@ -28,7 +28,7 @@ export default async function Example2({ children }) {
   const data = await api.getLayoutData()
 
   return (
-    <ShopLayout3 centeredNavigation showMobileMenu={false} data={data}>
+    <ShopLayout3 showMobileMenu={false} data={data}>
       {children}
     </ShopLayout3>
   )
@@ -43,12 +43,7 @@ export default async function Example3({ children }) {
   const data = await api.getLayoutData()
 
   return (
-    <ShopLayout3
-      centeredNavigation
-      showMobileMenu={false}
-      showFooter={false}
-      data={data}
-    >
+    <ShopLayout3 showMobileMenu={false} showFooter={false} data={data}>
       {children}
     </ShopLayout3>
   )
@@ -81,13 +76,14 @@ export default async function Example4({ children }) {
 - [Medical](https://bazar-react.vercel.app/medical)
 - [Grocery-1](https://bazar-react.vercel.app/grocery-1)
 - [Fashion-3](https://bazar-react.vercel.app/fashion-3)
+- [Gift Shop](https://bazar-react.vercel.app/gift-shop)
+- [Furniture-2](https://bazar-react.vercel.app/furniture-2)
 
 ## Props
 
-| Name               |   Type    | Required | Default |
-| :----------------- | :-------: | -------: | ------- |
-| data               |  Object   |      Yes | -       |
-| children           | ReactNode |      Yes | -       |
-| showFooter         |  boolean  | Optional | true    |
-| showMobileMenu     |  boolean  | Optional | true    |
-| centeredNavigation |  boolean  | Optional | false   |
+| Name           |   Type    | Required | Default |
+| :------------- | :-------: | -------: | ------- |
+| data           |  Object   |      Yes | -       |
+| children       | ReactNode |      Yes | -       |
+| showFooter     |  boolean  | Optional | true    |
+| showMobileMenu |  boolean  | Optional | true    |

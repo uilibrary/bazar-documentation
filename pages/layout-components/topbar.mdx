@@ -14,7 +14,9 @@ import { Topbar } from 'models/Layout.model'
 // Example 1
 export default function Example1({ topbar }:{ topbar: Topbar }) {
   return (
-    <Topbar label={topbar.label} title={topbar.title}>
+    <Topbar>
+      <Topbar.Left label={topbar.label} title={topbar.title} />
+
       <Topbar.Right>
         <TopbarLanguageSelector languages={topbar.languageOptions} />
         <TopbarSocialLinks links={topbar.socials} />
@@ -26,7 +28,9 @@ export default function Example1({ topbar }:{ topbar: Topbar }) {
 // Example 2
 export default function Example2({ topbar }:{ topbar: Topbar }) {
   return (
-    <Topbar label={topbar.label} title={topbar.title} bgColor="red">
+    <Topbar bgColor="red">
+      <Topbar.Left label={topbar.label} title={topbar.title} />
+
       <Topbar.Right>
         <TopbarLanguageSelector languages={topbar.languageOptions} />
         <TopbarSocialLinks links={topbar.socials} />
@@ -54,7 +58,5 @@ export default function Example2({ topbar }:{ topbar: Topbar }) {
 
 | Name     |   Type    | Required | Default |
 | :------- | :-------: | -------: | ------- |
-| title    |  string   |      Yes | -       |
-| label    |  string   |      Yes | -       |
 | children | ReactNode |      Yes | -       |
 | bgColor  |  string   | Optional | -       |
